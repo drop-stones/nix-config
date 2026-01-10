@@ -9,6 +9,12 @@
     <nixos-wsl/modules>
   ];
 
+  environment.systemPackages = with pkgs; [
+    git
+    lazygit
+    neovim
+  ];
+
   wsl.enable = true;
   wsl.defaultUser = "drop-stones";
 
