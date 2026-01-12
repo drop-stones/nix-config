@@ -2,7 +2,7 @@
 
 {
   imports = [
-    (inputs.self + "/hosts/nixos-wsl-personal/configuration.nix")
+    ../../system/platforms/base
 
     inputs.nixos-wsl.nixosModules.default
     {
