@@ -10,5 +10,9 @@
     };
   };
 
-  outputs = inputs: import ./outputs inputs;
+  outputs = inputs: {
+    nixosConfigurations = {
+      nixos-wsl-personal = import ./hosts/nixos-wsl-personal inputs;
+    };
+  };
 }
