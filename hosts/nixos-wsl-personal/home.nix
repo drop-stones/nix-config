@@ -1,19 +1,8 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
-  home.packages = with pkgs; [
-    # git
-    git
-    lazygit
-
-    # editor
-    neovim
+  imports = [
+    ../../home/profiles/personal
+    ../../home/platforms/base
   ];
-
-  home.sessionVariables = {
-    EDITOR = "nvim";
-    VISUAL = "nvim";
-  };
-
-  home.stateVersion = "25.05";
 }
