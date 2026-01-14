@@ -10,9 +10,14 @@
     };
   };
 
-  outputs = inputs: {
+  outputs = inputs:
+  let
+    localLib = import ./lib { lib = inputs.nixpkgs.lib; root = inputs.self.outPath; };
+    args = inputs // { inherit localLib; };
+  in
+  {
     nixosConfigurations = {
-      nixos-wsl-personal = import ./hosts/nixos-wsl-personal inputs;
+      nixos-wsl-personal = import ./hosts/nixos-wsl-personal args;
     };
   };
 }
