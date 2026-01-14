@@ -1,8 +1,4 @@
-{ ... }:
+{ localLib, ... }:
 {
-  imports = [
-    ./nix.nix
-    ./home-manager.nix
-    ./fish.nix
-  ];
+  imports = localLib.listImports ./.;
 }

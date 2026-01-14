@@ -1,7 +1,6 @@
-{ ... }:
+{ localLib, ... }:
 {
-  imports = [
-    ../base
-    ./wsl.nix
-  ];
+  imports = (localLib.listImports ./.) ++ (map localLib.fromRoot [
+    "system/platforms/base"
+  ]);
 }

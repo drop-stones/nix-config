@@ -1,11 +1,4 @@
-{ ... }:
+{ localLib, ... }:
 {
-  imports = [
-    # home-manager settings
-    ./home.nix
-
-    # packages
-    ./git.nix
-    ./neovim.nix
-  ];
+  imports = localLib.listImports ./.;
 }

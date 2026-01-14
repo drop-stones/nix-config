@@ -1,8 +1,8 @@
-{ ... }:
+{ localLib, ... }:
 
 {
-  imports = [
-    ../../home/profiles/personal
-    ../../home/platforms/base
-  ];
+  imports = (map localLib.fromRoot [
+    "home/profiles/personal"
+    "home/platforms/base"
+  ]);
 }
