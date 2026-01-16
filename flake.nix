@@ -17,7 +17,7 @@
   in
   {
     nixosConfigurations = {
-      nixos-wsl-personal = import ./hosts/nixos-wsl-personal args;
+      nixos-wsl = import ./hosts/nixos-wsl args;
     };
   };
 }
