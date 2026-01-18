@@ -8,6 +8,12 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs"; # same version with inputs.nixpkgs
     };
+
+    # fish plugins
+    betterescape-fish = {
+      url = "github:drop-stones/betterescape.fish";
+      flake = false;
+    };
   };
 
   outputs = inputs:

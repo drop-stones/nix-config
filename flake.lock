@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "betterescape-fish": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761484209,
+        "narHash": "sha256-bZgTdrHQbst4WeF5jFPTpWbukMRMgBL07yZfGtjNN04=",
+        "owner": "drop-stones",
+        "repo": "betterescape.fish",
+        "rev": "37a883d7d6ecee18e8f663bb91f80eaef59a3b46",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drop-stones",
+        "repo": "betterescape.fish",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -91,6 +107,7 @@
     },
     "root": {
       "inputs": {
+        "betterescape-fish": "betterescape-fish",
         "home-manager": "home-manager",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2"
