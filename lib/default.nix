@@ -1,7 +1,7 @@
-{ lib, root }:
+{ lib, root } @ args:
 {
   nixosSystem = import ./nixosSystem.nix;
 
-  fromRoot = import ./fromRoot.nix { inherit lib root; };
-  listImports = import ./listImports.nix { inherit lib; };
+  fromRoot = import ./fromRoot.nix args;
+  listImports = import ./listImports.nix args;
 }
