@@ -7,9 +7,10 @@ in
     enable = true;
 
     plugins = with pkgs.fishPlugins; (map fishPlugin [
-      tide
-      fzf-fish
+      autopair
       betterescape
+      fzf-fish
+      tide
     ]);
   };
 }
