@@ -113,7 +113,24 @@
         "home-manager": "home-manager",
         "initcache-fish": "initcache-fish",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "wslwrap-fish": "wslwrap-fish"
+      }
+    },
+    "wslwrap-fish": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1759066548,
+        "narHash": "sha256-Dglr+iEyzoMX0jZrCVaj1vbCeI4AvntPN6oG4Mn7Kdk=",
+        "owner": "drop-stones",
+        "repo": "wslwrap.fish",
+        "rev": "e684b9f3d9ef35fb18e938b6ebeb0f37a49d6ddd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drop-stones",
+        "repo": "wslwrap.fish",
+        "type": "github"
       }
     }
   },

@@ -21,6 +21,10 @@
       url = "github:drop-stones/initcache.fish";
       flake = false;
     };
+    wslwrap-fish = {
+      url = "github:drop-stones/wslwrap.fish";
+      flake = false;
+    };
   };
 
   outputs = inputs:

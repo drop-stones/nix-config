@@ -14,6 +14,7 @@ in
       # local plugins
       betterescape
       initcache
+      wslwrap
     ]);
   };
 }
