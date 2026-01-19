@@ -53,6 +53,22 @@
         "type": "github"
       }
     },
+    "initcache-fish": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1761568721,
+        "narHash": "sha256-M+PTx9KRaZDjy2kKEbr1EJlKRTcAiM89tgkYQQjHz3g=",
+        "owner": "drop-stones",
+        "repo": "initcache.fish",
+        "rev": "f1edd4161c4dab80a6c3c08961930e445909c4d8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drop-stones",
+        "repo": "initcache.fish",
+        "type": "github"
+      }
+    },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -95,6 +111,7 @@
       "inputs": {
         "betterescape-fish": "betterescape-fish",
         "home-manager": "home-manager",
+        "initcache-fish": "initcache-fish",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs"
       }

@@ -17,6 +17,10 @@
       url = "github:drop-stones/betterescape.fish";
       flake = false;
     };
+    initcache-fish = {
+      url = "github:drop-stones/initcache.fish";
+      flake = false;
+    };
   };
 
   outputs = inputs:
