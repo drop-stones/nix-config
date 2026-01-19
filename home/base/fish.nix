@@ -7,6 +7,7 @@ in
     enable = true;
 
     plugins = with pkgs.fishPlugins; (map fishPlugin [
+      tide
       betterescape
     ]);
   };
