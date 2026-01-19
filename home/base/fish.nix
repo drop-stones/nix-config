@@ -8,6 +8,7 @@ in
 
     plugins = with pkgs.fishPlugins; (map fishPlugin [
       tide
+      fzf-fish
       betterescape
     ]);
   };
