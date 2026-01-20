@@ -29,7 +29,7 @@
 
   outputs = inputs:
   let
-    localLib = import ./lib { lib = inputs.nixpkgs.lib; root = inputs.self.outPath; };
+    localLib = import ./lib (inputs // { lib = inputs.nixpkgs.lib; root = inputs.self.outPath; });
     args = inputs // { inherit localLib; };
   in
   {

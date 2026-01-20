@@ -13,9 +13,9 @@
 # - reuses the same pkgs set between NixOS and Home Manager
 # - forwards specialArgs to Home Manager via extraSpecialArgs
 # - imports the given Home Manager modules for the specified user
-
-{ nixpkgs, home-manager, user, system, nixos-modules, home-modules, specialArgs, ... }:
-nixpkgs.lib.nixosSystem {
+{ lib, home-manager, ... }:
+{ user, system, nixos-modules, home-modules, specialArgs, ... }:
+lib.nixosSystem {
   inherit system specialArgs;
 
   modules =
