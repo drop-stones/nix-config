@@ -1,6 +1,10 @@
 { localLib, ... }:
 {
   imports = (map localLib.fromRoot [
-    "home/base"
+    "home/common"
+    "home/modules/fish"
+    "home/modules/fzf"
+    "home/modules/git"
+    "home/modules/neovim"
   ]);
 }
