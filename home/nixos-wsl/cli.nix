@@ -2,6 +2,7 @@
 {
   imports = localLib.listHomeModules [
     "bat"
+    "eza"
     "fd"
     "fish"
     "fzf"
