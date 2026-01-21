@@ -1,4 +1,13 @@
-{ pkgs, localLib, ... }:
+{ pkgs, config, lib, localLib, ... }:
 {
-  programs.fish.plugins = [ (localLib.mkPlugin pkgs.fishPlugins.initcache) ];
+  programs.fish = {
+    # install initcache
+    plugins = [ (localLib.mkPlugin pkgs.fishPlugins.initcache) ];
+
+    # settings for zoxide/mise
+    interactiveShellInit = ''
+      ${lib.optionalString config.programs.zoxide.enable "initcache source zoxide init fish\n"}
+      ${lib.optionalString config.programs.mise.enable "initcache source mise activate fish\n"}
+    '';
+  };
 }
