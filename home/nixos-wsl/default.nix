@@ -6,5 +6,6 @@
     "home/modules/fzf"
     "home/modules/git"
     "home/modules/neovim"
+    "home/modules/ripgrep"
   ]);
 }
