@@ -7,6 +7,7 @@
     "fish"
     "fzf"
     "git"
+    "mise"
     "neovim"
     "ripgrep"
     "zoxide"
