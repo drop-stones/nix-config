@@ -7,6 +7,7 @@
     "fish"
     "fzf"
     "git"
+    "hyperfine"
     "mise"
     "neovim"
     "ripgrep"
