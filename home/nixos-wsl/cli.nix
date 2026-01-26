@@ -11,6 +11,7 @@
     "mise"
     "neovim"
     "ripgrep"
+    "zellij"
     "zoxide"
   ];
 }
