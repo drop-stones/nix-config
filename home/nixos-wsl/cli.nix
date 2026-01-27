@@ -11,6 +11,7 @@
     "mise"
     "neovim"
     "ripgrep"
+    "tree-sitter"
     "zellij"
     "zoxide"
   ];
