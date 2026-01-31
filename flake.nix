@@ -12,6 +12,12 @@
       inputs.nixpkgs.follows = "nixpkgs"; # same version with inputs.nixpkgs
     };
 
+    # nvim-config
+    nvim-config = {
+      url = "github:drop-stones/nvim-config";
+      flake = false;
+    };
+
     # fish plugins
     betterescape-fish = {
       url = "github:drop-stones/betterescape.fish";

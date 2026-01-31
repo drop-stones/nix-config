@@ -39,11 +39,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768949235,
-        "narHash": "sha256-TtjKgXyg1lMfh374w5uxutd6Vx2P/hU81aEhTxrO2cg=",
+        "lastModified": 1769580047,
+        "narHash": "sha256-tNqCP/+2+peAXXQ2V8RwsBkenlfWMERb+Uy6xmevyhM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "75ed713570ca17427119e7e204ab3590cc3bf2a5",
+        "rev": "366d78c2856de6ab3411c15c1cb4fb4c2bf5c826",
         "type": "github"
       },
       "original": {
@@ -56,11 +56,11 @@
     "initcache-fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1769342364,
-        "narHash": "sha256-ulZ88FnoHiIvweu0wGrnjlP5PhIAc2q7Tpje274yBPg=",
+        "lastModified": 1769438712,
+        "narHash": "sha256-7jxQzvcqYj56oWMjd/ux3/B6E/1cF/QFHEKnEgOi6a0=",
         "owner": "drop-stones",
         "repo": "initcache.fish",
-        "rev": "76e107b721496d072ce65a9682ca3132811c61a2",
+        "rev": "b14e9cdb76a736c987c186ca38527cb707a8a7ed",
         "type": "github"
       },
       "original": {
@@ -93,17 +93,33 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1769089682,
-        "narHash": "sha256-9yA/LIuAVQq0lXelrZPjLuLVuZdm03p8tfmHhnDIkms=",
+        "lastModified": 1769598131,
+        "narHash": "sha256-e7VO/kGLgRMbWtpBqdWl0uFg8Y2XWFMdz0uUJvlML8o=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "078d69f03934859a181e81ba987c2bb033eebfc5",
+        "rev": "fa83fd837f3098e3e678e6cf017b2b36102c7211",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "nixos-25.11",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1769872060,
+        "narHash": "sha256-cye4Cn9BAWTXekKx3WaP+eMm3yDjZRQg9dezYzNXVWg=",
+        "owner": "drop-stones",
+        "repo": "nvim-config",
+        "rev": "455f0adc07710f0a19d4af24cd93b2e40bea8cd0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drop-stones",
+        "repo": "nvim-config",
         "type": "github"
       }
     },
@@ -114,6 +130,7 @@
         "initcache-fish": "initcache-fish",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
+        "nvim-config": "nvim-config",
         "wslwrap-fish": "wslwrap-fish"
       }
     },
