@@ -12,6 +12,7 @@
     "neovim"
     "ripgrep"
     "tree-sitter"
+    "unzip"
     "zellij"
     "zoxide"
   ];
