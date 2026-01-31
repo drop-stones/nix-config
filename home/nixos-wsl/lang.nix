@@ -3,5 +3,6 @@
   imports = localLib.listHomeModules [
     "clang"
     "nodejs"
+    "python"
   ];
 }
