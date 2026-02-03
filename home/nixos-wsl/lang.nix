@@ -5,5 +5,6 @@
     "nix"
     "nodejs"
     "python"
+    "rust"
   ];
 }
