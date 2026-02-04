@@ -1,8 +1,4 @@
-{ pkgs, ... }:
-
+{ localLib, ... }:
 {
-  home.packages = with pkgs; [
-    git
-    lazygit
-  ];
+  imports = localLib.listImports ./.;
 }

@@ -8,6 +8,7 @@
     "fzf"
     "git"
     "hyperfine"
+    "lazygit"
     "mise"
     "neovim"
     "ripgrep"
