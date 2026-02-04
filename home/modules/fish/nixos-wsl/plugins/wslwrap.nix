@@ -1,4 +1,10 @@
-{ pkgs, localLib, ... }:
+{
+  pkgs,
+  lib,
+  localLib,
+  user,
+  ...
+}:
 {
   programs.fish = {
     # install wslwrap.fish
@@ -29,6 +35,11 @@
       wslwrap link powershell.exe
       wslwrap link pwsh.exe
       wslwrap link win32yank.exe
+      ${lib.optionalString (lib.attrByPath [
+        "git"
+        "gpgsign"
+        "enable"
+      ] false user) "wslwrap link op-ssh-sign-wsl.exe"}
     '';
   };
 }
