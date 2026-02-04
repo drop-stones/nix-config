@@ -1,4 +1,10 @@
-{ lib, stdenvNoCC, localLib, fisher, ... }:
+{
+  lib,
+  stdenvNoCC,
+  localLib,
+  fisher,
+  ...
+}:
 stdenvNoCC.mkDerivation {
   pname = "fisher";
   version = localLib.getInputVersionFromLock { name = "fisher"; };

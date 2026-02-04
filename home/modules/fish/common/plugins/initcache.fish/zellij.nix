@@ -6,5 +6,6 @@
   '';
 
   # disable zellij integration if zellij is enabled
-  programs.zellij.enableFishIntegration = if (config.programs.zellij.enable) then false else config.programs.zellij.enableFishIntegration;
+  programs.zellij.enableFishIntegration =
+    if (config.programs.zellij.enable) then false else config.programs.zellij.enableFishIntegration;
 }

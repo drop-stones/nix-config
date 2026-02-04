@@ -1,4 +1,9 @@
-{ prev, lib, betterescape-fish, ... }:
+{
+  prev,
+  lib,
+  betterescape-fish,
+  ...
+}:
 prev.fishPlugins.buildFishPlugin {
   pname = "betterescape.fish";
   version = "unstable";

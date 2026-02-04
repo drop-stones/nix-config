@@ -8,7 +8,11 @@ let
   entries = builtins.readDir path;
   names = builtins.attrNames entries;
 in
-builtins.listToAttrs (map (entry: {
-  name = "${name}/${entry}";
-  value = { source = path + "/" + entry; };
-}) names)
+builtins.listToAttrs (
+  map (entry: {
+    name = "${name}/${entry}";
+    value = {
+      source = path + "/" + entry;
+    };
+  }) names
+)

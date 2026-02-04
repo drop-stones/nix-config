@@ -4,10 +4,13 @@
 # - includes entries in common/ (via listImports)
 # - includes entries in <platform>/ (via listImports) only if <platform>/ exists
 { lib, ... }:
-{ dir, platform ? null }:
+{
+  dir,
+  platform ? null,
+}:
 let
   commonPath = lib.path.append dir "common";
   platformPath = if platform != null then lib.path.append dir platform else null;
 in
-  (lib.optional (builtins.pathExists commonPath) commonPath)
-  ++ (lib.optional (platformPath != null && builtins.pathExists platformPath) platformPath)
+(lib.optional (builtins.pathExists commonPath) commonPath)
+++ (lib.optional (platformPath != null && builtins.pathExists platformPath) platformPath)

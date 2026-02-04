@@ -33,14 +33,23 @@
     };
   };
 
-  outputs = inputs:
-  let
-    localLib = import ./lib (inputs // { lib = inputs.nixpkgs.lib; root = inputs.self.outPath; });
-    args = inputs // { inherit localLib; };
-  in
-  {
-    nixosConfigurations = {
-      nixos-wsl = import ./hosts/nixos-wsl args;
+  outputs =
+    inputs:
+    let
+      localLib = import ./lib (
+        inputs
+        // {
+          lib = inputs.nixpkgs.lib;
+          root = inputs.self.outPath;
+        }
+      );
+      args = inputs // {
+        inherit localLib;
+      };
+    in
+    {
+      nixosConfigurations = {
+        nixos-wsl = import ./hosts/nixos-wsl args;
+      };
     };
-  };
 }

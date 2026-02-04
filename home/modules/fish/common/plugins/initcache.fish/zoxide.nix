@@ -6,5 +6,6 @@
   '';
 
   # disable zoxide integration if zoxide is enabled
-  programs.zoxide.enableFishIntegration = if (config.programs.zoxide.enable) then false else config.programs.zoxide.enableFishIntegration;
+  programs.zoxide.enableFishIntegration =
+    if (config.programs.zoxide.enable) then false else config.programs.zoxide.enableFishIntegration;
 }

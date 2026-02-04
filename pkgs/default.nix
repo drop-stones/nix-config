@@ -2,5 +2,8 @@
 # Supported layouts:
 # - pkgs/foo.nix         -> pkgs.foo
 # - pkgs/foo/default.nix -> pkgs.foo
-{ prev, localLib, ... } @ args:
-localLib.importDir { dir = ./.; mkValue = (p: prev.callPackage p args); }
+{ prev, localLib, ... }@args:
+localLib.importDir {
+  dir = ./.;
+  mkValue = (p: prev.callPackage p args);
+}

@@ -11,9 +11,6 @@ path:
 let
   base = builtins.baseNameOf (toString path);
   parts = lib.strings.splitString "." base;
-  stemParts =
-    if builtins.length parts <= 1
-    then parts
-    else lib.lists.init parts;
+  stemParts = if builtins.length parts <= 1 then parts else lib.lists.init parts;
 in
 lib.strings.concatStringsSep "." stemParts

@@ -1,4 +1,9 @@
-{ prev, lib, initcache-fish, ... }:
+{
+  prev,
+  lib,
+  initcache-fish,
+  ...
+}:
 prev.fishPlugins.buildFishPlugin {
   pname = "initcache.fish";
   version = "unstable";

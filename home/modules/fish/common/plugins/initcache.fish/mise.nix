@@ -6,5 +6,6 @@
   '';
 
   # disable mise integration if mise is enabled
-  programs.mise.enableFishIntegration = if (config.programs.mise.enable) then false else config.programs.mise.enableFishIntegration;
+  programs.mise.enableFishIntegration =
+    if (config.programs.mise.enable) then false else config.programs.mise.enableFishIntegration;
 }

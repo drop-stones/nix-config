@@ -2,7 +2,7 @@
 #
 # Create a list of paths under home/modules/ from a list of names:
 # - ["foo" "bar"] → ["home/modules/foo" "home/modules/bar"]
-{ ... } @ args:
+{ ... }@args:
 let
   fromRoot = import ./fromRoot.nix args;
 in

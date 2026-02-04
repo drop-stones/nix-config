@@ -14,9 +14,8 @@ let
   entries = builtins.readDir dir;
   names = builtins.attrNames entries;
 
-  isImportableDir = name:
-    entries.${name} == "directory" && hasDefaultNix (childPath name);
+  isImportableDir = name: entries.${name} == "directory" && hasDefaultNix (childPath name);
 
   wanted = builtins.filter (name: isNixFile name || isImportableDir name) names;
 in
-  builtins.map childPath wanted
+builtins.map childPath wanted

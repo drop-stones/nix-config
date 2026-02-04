@@ -1,4 +1,10 @@
-{ pkgs, config, lib, localLib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  localLib,
+  ...
+}:
 lib.mkIf (config.programs.fzf.enable) {
   programs.fish = {
     # install fzf-fish

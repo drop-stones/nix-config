@@ -1,4 +1,9 @@
-{ prev, lib, wslwrap-fish, ... }:
+{
+  prev,
+  lib,
+  wslwrap-fish,
+  ...
+}:
 prev.fishPlugins.buildFishPlugin {
   pname = "wslwrap.fish";
   version = "unstable";

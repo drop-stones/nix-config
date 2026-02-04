@@ -1,4 +1,9 @@
-{ user, nixos-wsl, localLib, ... }:
+{
+  user,
+  nixos-wsl,
+  localLib,
+  ...
+}:
 {
   imports = [
     nixos-wsl.nixosModules.default
@@ -17,5 +22,8 @@
     };
   };
 
-  system.stateVersion = localLib.getInputVersionFromLock { name = "nixpkgs"; prefix = "nixos-"; };
+  system.stateVersion = localLib.getInputVersionFromLock {
+    name = "nixpkgs";
+    prefix = "nixos-";
+  };
 }

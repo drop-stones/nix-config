@@ -1,6 +1,8 @@
 { localLib, ... }:
 {
-  imports = (localLib.listImports ./.) ++ (map localLib.fromRoot [
-    "system/base"
-  ]);
+  imports =
+    (localLib.listImports ./.)
+    ++ (map localLib.fromRoot [
+      "system/base"
+    ]);
 }

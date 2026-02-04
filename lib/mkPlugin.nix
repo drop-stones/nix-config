@@ -6,4 +6,7 @@
 #
 # Commonly used for fish, vim, zsh, and other plugin system derivations.
 { ... }:
-package: { name = package.pname; src = package.src; }
+package: {
+  name = package.pname;
+  src = package.src;
+}
