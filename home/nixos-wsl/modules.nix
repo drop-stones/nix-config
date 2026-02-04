@@ -1,10 +1,8 @@
 { localLib, ... }:
 {
   imports = localLib.listHomeModules [
-    "clang"
-    "nix"
-    "nodejs"
-    "python"
-    "rust"
+    "cli"
+    "dev"
+    "lang"
   ];
 }
