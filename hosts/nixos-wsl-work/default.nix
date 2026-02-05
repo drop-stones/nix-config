@@ -1,6 +1,6 @@
 { localLib, ... }@inputs:
 let
-  user = import (localLib.fromRoot "data/users/drop-stones.nix");
+  user = import (localLib.fromRoot "data/users/work.nix");
   platform = "nixos-wsl";
   system = "x86_64-linux";
   nixos-modules = [ (localLib.fromRoot "system/nixos-wsl") ];

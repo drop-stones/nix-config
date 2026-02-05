@@ -39,7 +39,7 @@
       localLib = import ./lib (
         inputs
         // {
-          lib = inputs.nixpkgs.lib;
+          inherit (inputs.nixpkgs) lib;
           root = inputs.self.outPath;
         }
       );
@@ -50,6 +50,7 @@
     {
       nixosConfigurations = {
         nixos-wsl = import ./hosts/nixos-wsl args;
+        nixos-wsl-work = import ./hosts/nixos-wsl-work args;
       };
     };
 }
