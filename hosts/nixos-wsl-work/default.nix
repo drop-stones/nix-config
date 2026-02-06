@@ -1,9 +1,13 @@
-{ localLib, ... }@inputs:
+{ localLib, agenix, ... }@inputs:
 let
   user = import (localLib.fromRoot "data/users/work.nix");
   platform = "nixos-wsl";
   system = "x86_64-linux";
-  nixos-modules = [ (localLib.fromRoot "system/nixos-wsl") ];
+  nixos-modules = [
+    (localLib.fromRoot "system/nixos-wsl")
+    agenix.nixosModules.default
+    { environment.systemPackages = [ agenix.packages.${system}.default ]; }
+  ];
   home-modules = [ (localLib.fromRoot "home/nixos-wsl") ];
   specialArgs = inputs // {
     inherit user platform;

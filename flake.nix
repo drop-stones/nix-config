@@ -12,6 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs"; # same version with inputs.nixpkgs
     };
 
+    # secrets management
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # nvim-config
     nvim-config = {
       url = "github:drop-stones/nvim-config";
