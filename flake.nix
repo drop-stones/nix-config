@@ -19,6 +19,12 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # private secrets
+    secrets-config = {
+      url = "git+ssh://git@github.com/drop-stones/secrets-config";
+      flake = false;
+    };
+
     # nvim-config
     nvim-config = {
       url = "github:drop-stones/nvim-config";

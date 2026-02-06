@@ -179,7 +179,24 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "nvim-config": "nvim-config",
+        "secrets-config": "secrets-config",
         "wslwrap-fish": "wslwrap-fish"
+      }
+    },
+    "secrets-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1770388864,
+        "narHash": "sha256-YOAXaPXo86moX62nNfosG/dNnka4y6Y3Pu8/iCozOnQ=",
+        "ref": "refs/heads/main",
+        "rev": "1361974ef6205c8c242c1f004eb0a16813e29bea",
+        "revCount": 3,
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/secrets-config"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/secrets-config"
       }
     },
     "systems": {
