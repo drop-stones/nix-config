@@ -4,6 +4,9 @@
   homeDirectory = "/home/drop-stones";
 
   git = {
+    # Enable git
+    enable = true;
+
     # Git identity
     name = "drop-stones";
     email = "s2h6i8z1u7k8u7@gmail.com";
