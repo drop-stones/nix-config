@@ -5,12 +5,11 @@ let
   system = "x86_64-linux";
   nixos-modules = [
     (localLib.fromRoot "system/nixos-wsl")
-    agenix.nixosModules.default
-    { environment.systemPackages = [ agenix.packages.${system}.default ]; }
+    (localLib.fromRoot "secrets")
   ];
   home-modules = [ (localLib.fromRoot "home/nixos-wsl") ];
   specialArgs = inputs // {
-    inherit user platform;
+    inherit user platform system;
   };
   args = {
     inherit
