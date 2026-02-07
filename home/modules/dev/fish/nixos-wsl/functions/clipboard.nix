@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   # Customized fish_clipboard_paste
   # Original: https://github.com/fish-shell/fish-shell/blob/master/share/functions/fish_clipboard_paste.fish
   # Change: Added win32yank.exe support and prioritized it over powershell.exe on Windows

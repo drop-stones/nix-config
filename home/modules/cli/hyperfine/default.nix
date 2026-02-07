@@ -1,7 +1,5 @@
 { pkgs, ... }:
 {
-  # install hyperfine
-  home.packages = with pkgs; [
-    hyperfine
-  ];
+  # hyperfine: A command-line benchmarking tool
+  home.packages = [ pkgs.hyperfine ];
 }

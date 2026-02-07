@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.zellij.extraConfig = ''
     keybinds clear-defaults=true {
       normal {

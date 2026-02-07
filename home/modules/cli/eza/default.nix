@@ -1,5 +1,4 @@
-{ ... }:
-{
-  # install eza
+_: {
+  # eza: A modern alternative to ls
   programs.eza.enable = true;
 }

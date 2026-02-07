@@ -6,7 +6,7 @@
 { lib, ... }@args:
 {
   dir,
-  mkValue ? (p: import p),
+  mkValue ? import,
 }:
 let
   pathToStem = import ./pathToStem.nix args;

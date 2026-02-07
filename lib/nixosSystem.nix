@@ -28,12 +28,12 @@ lib.nixosSystem {
   modules = nixos-modules ++ [
     home-manager.nixosModules.home-manager
     {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-
-      home-manager.extraSpecialArgs = specialArgs;
-
-      home-manager.users.${user.username}.imports = home-modules;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = specialArgs;
+        users.${user.username}.imports = home-modules;
+      };
     }
   ];
 }

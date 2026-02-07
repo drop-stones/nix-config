@@ -2,5 +2,5 @@
 { prev, localLib, ... }@args:
 localLib.importDir {
   dir = ./.;
-  mkValue = (p: prev.callPackage p args);
+  mkValue = p: prev.callPackage p args;
 }

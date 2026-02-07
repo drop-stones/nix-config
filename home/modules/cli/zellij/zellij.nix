@@ -1,5 +1,4 @@
-{ ... }:
-{
-  # install zellij
+_: {
+  # zellij: A terminal workspace with batteries included
   programs.zellij.enable = true;
 }

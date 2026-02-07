@@ -5,8 +5,7 @@
 # - extracts 'src' from 'src'
 #
 # Commonly used for fish, vim, zsh, and other plugin system derivations.
-{ ... }:
-package: {
+_: package: {
   name = package.pname;
-  src = package.src;
+  inherit (package) src;
 }

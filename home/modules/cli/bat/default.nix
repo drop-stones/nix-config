@@ -1,7 +1,6 @@
-{ ... }:
-{
+_: {
+  # bat: A cat(1) clone with wings
   programs.bat = {
-    # install bat
     enable = true;
 
     # Tokyo Night Theme

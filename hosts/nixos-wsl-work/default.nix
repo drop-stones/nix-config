@@ -1,4 +1,4 @@
-{ localLib, agenix, ... }@inputs:
+{ localLib, ... }@inputs:
 let
   user = import (localLib.fromRoot "data/users/work.nix");
   platform = "nixos-wsl";

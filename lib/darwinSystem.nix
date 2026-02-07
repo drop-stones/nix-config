@@ -11,7 +11,12 @@
 # - reuses the same pkgs set between darwin and Home Manager
 # - forwards specialArgs to Home Manager via extraSpecialArgs
 # - imports the given Home Manager modules for the specified user
-{ lib, home-manager, nix-darwin, ... }:
+{
+  lib,
+  home-manager,
+  nix-darwin,
+  ...
+}:
 {
   user,
   system,
@@ -26,12 +31,12 @@ nix-darwin.lib.darwinSystem {
   modules = darwin-modules ++ [
     home-manager.darwinModules.home-manager
     {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-
-      home-manager.extraSpecialArgs = specialArgs;
-
-      home-manager.users.${user.username}.imports = home-modules;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = specialArgs;
+        users.${user.username}.imports = home-modules;
+      };
     }
   ];
 }

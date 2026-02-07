@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.fish.shellAliases = {
     # bat
     cat = "bat";

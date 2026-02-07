@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.fish.shellAbbrs = {
     # git
     ga = "git add";

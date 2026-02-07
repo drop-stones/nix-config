@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.zellij.extraConfig = ''
     // Plugin aliases - can be used to change the implementation of Zellij
     // changing these requires a restart to take effect

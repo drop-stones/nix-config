@@ -5,7 +5,7 @@
   localLib,
   ...
 }:
-lib.mkIf (config.programs.fzf.enable) {
+lib.mkIf config.programs.fzf.enable {
   programs.fish = {
     # install fzf-fish
     plugins = [ (localLib.mkPlugin pkgs.fishPlugins.fzf-fish) ];

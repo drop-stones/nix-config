@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   programs.zellij.extraConfig = ''
     // A fixed name to always give the Zellij session.
     // Consider also setting `attach_to_session true,`

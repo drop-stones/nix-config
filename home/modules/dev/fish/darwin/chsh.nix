@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ lib, ... }:
 {
   home.activation = {
     # Ensure the login shell points to the nix-darwin managed fish.
