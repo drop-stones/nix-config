@@ -2,7 +2,7 @@
   agenix,
   secrets-config,
   system,
-  user,
+  data,
   ...
 }:
 {
@@ -16,9 +16,9 @@
 
   age.secrets."gitconfig" = {
     symlink = true;
-    path = "${user.homeDirectory}/.config/git/config";
+    path = "${data.user.homeDirectory}/.config/git/config";
     file = "${secrets-config}/git/config.age";
-    owner = "${user.username}";
+    owner = "${data.user.username}";
     group = "users";
     mode = "0400";
   };

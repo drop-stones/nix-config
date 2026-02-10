@@ -1,5 +1,5 @@
 {
-  user,
+  data,
   nixos-wsl,
   localLib,
   ...
@@ -11,7 +11,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = user.username;
+    defaultUser = data.user.username;
 
     # exclude Windows PATH in WSL PATH
     interop = {

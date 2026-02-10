@@ -1,6 +1,6 @@
-{ user, ... }:
+{ data, ... }:
 {
-  users.users.${user.username} = {
+  users.users.${data.user.username} = {
     isNormalUser = true;
   };
 }

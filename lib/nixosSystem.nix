@@ -15,7 +15,7 @@
 # - imports the given Home Manager modules for the specified user
 { lib, home-manager, ... }:
 {
-  user,
+  data,
   system,
   nixos-modules,
   home-modules,
@@ -32,7 +32,7 @@ lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         extraSpecialArgs = specialArgs;
-        users.${user.username}.imports = home-modules;
+        users.${data.user.username}.imports = home-modules;
       };
     }
   ];

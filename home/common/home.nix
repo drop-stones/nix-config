@@ -1,8 +1,7 @@
-{ user, localLib, ... }:
-
+{ data, localLib, ... }:
 {
   home = {
-    inherit (user) username homeDirectory;
+    inherit (data.user) username homeDirectory;
     stateVersion = localLib.getInputVersionFromLock {
       name = "home-manager";
       prefix = "release-";

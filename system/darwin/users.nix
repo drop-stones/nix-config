@@ -1,6 +1,6 @@
-{ user, ... }:
+{ data, ... }:
 {
-  users.users.${user.username} = {
-    home = user.homeDirectory;
+  users.users.${data.user.username} = {
+    home = data.user.homeDirectory;
   };
 }

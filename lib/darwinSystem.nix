@@ -18,7 +18,7 @@
   ...
 }:
 {
-  user,
+  data,
   system,
   darwin-modules,
   home-modules,
@@ -35,7 +35,7 @@ nix-darwin.lib.darwinSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         extraSpecialArgs = specialArgs;
-        users.${user.username}.imports = home-modules;
+        users.${data.user.username}.imports = home-modules;
       };
     }
   ];

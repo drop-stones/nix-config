@@ -1,5 +1,5 @@
 {
   # Nix account
   username = "drop-stones";
-  homeDirectory = "/Users/drop-stones";
+  homeDirectory = "/home/drop-stones";
 }

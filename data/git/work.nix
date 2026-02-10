@@ -1,0 +1,4 @@
+{
+  # Disable git
+  enable = false;
+}

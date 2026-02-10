@@ -1,16 +1,16 @@
 { localLib, ... }@inputs:
 let
-  user = import (localLib.fromRoot "data/users/drop-stones.nix");
   platform = "nixos-wsl";
   system = "x86_64-linux";
+  data = import (localLib.fromRoot "data") platform;
   nixos-modules = [ (localLib.fromRoot "system/nixos-wsl") ];
   home-modules = [ (localLib.fromRoot "home/nixos-wsl") ];
   specialArgs = inputs // {
-    inherit user platform;
+    inherit data platform system;
   };
   args = {
     inherit
-      user
+      data
       system
       nixos-modules
       home-modules

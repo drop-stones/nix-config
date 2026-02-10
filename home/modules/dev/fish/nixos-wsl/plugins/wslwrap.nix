@@ -2,7 +2,7 @@
   pkgs,
   lib,
   localLib,
-  user,
+  data,
   ...
 }:
 {
@@ -31,15 +31,13 @@
       wslwrap register wsl --mode windows
 
       ## symlink
+      wslwrap link ssh.exe
+      wslwrap link ssh-add.exe
       wslwrap link cmd.exe
       wslwrap link powershell.exe
       wslwrap link pwsh.exe
       wslwrap link win32yank.exe
-      ${lib.optionalString (lib.attrByPath [
-        "git"
-        "gpgsign"
-        "enable"
-      ] false user) "wslwrap link op-ssh-sign-wsl.exe"}
+      ${lib.optionalString data.git.enable "wslwrap link op-ssh-sign-wsl.exe"}
     '';
   };
 }
