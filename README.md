@@ -1,0 +1,58 @@
+# nix-config
+
+## Installation
+
+### 🍎 macOS
+
+[nix-darwin](https://github.com/nix-darwin/nix-darwin)
+
+#### Step.1 Install `nix`
+
+[Downlaod Nix](https://nixos.org/download/#nix-install-macos)
+
+```bash
+sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
+```
+
+#### Step.2 Rebuild with `nix-config`
+
+[nix-config](https://github.com/drop-stones/nix-config)
+
+```bash
+sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch --flake "github:drop-stones/nix-config#darwin-intel"
+```
+
+#### Step.3 Configure Apps
+
+- [1Password](https://1password.com)
+  - Disable auto updates: Settings > Advanced > Install updates automatically
+  - Enable ssh-agent: Settings > Developer > Use the SSH Agent
+
+### 🪟 WSL2
+
+[NixOS-WSL](https://github.com/nix-community/NixOS-WSL)
+
+#### Step.1 Install `NixOS-WSL`
+
+1. Download the latest release from [NixOS-WSL Release](https://github.com/nix-community/NixOS-WSL/releases)
+2. Double-click the file you just downloaded
+3. Run NixOS:
+
+   ```bash
+   wsl -d NixOS
+   ```
+
+4. Update NixOS:
+
+   ```bash
+   sudo nix-channel --update
+   sudo nixos-rebuild switch
+   ```
+
+#### Step.2 Rebuild with `nix-config`
+
+[nix-config](https://github.com/drop-stones/nix-config)
+
+```bash
+sudo nixos-rebuild switch --flake "github:drop-stones/nix-config#nixos-wsl"
+```
