@@ -1,7 +1,6 @@
 { pkgs, data, ... }:
 {
-  programs.fish.enable = true;
-
+  # Set fish as login shell
   users.users.${data.user.username} = {
     shell = pkgs.fish;
   };
