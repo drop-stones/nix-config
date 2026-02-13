@@ -1,7 +1,7 @@
 { pkgs, localLib, ... }:
 {
   programs.fish = {
-    # install betterescape.fish
+    # betterescape.fish: 🐟⎋ Vi-mode escape sequences for fish shell
     plugins = [ (localLib.mkPlugin pkgs.fishPlugins.betterescape) ];
 
     # settings

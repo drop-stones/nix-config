@@ -7,7 +7,7 @@
 }:
 {
   programs.fish = {
-    # install wslwrap.fish
+    # wslwrap.fish: 🐟🐧 Auto-switch Linux/Windows executables in WSL2
     plugins = [ (localLib.mkPlugin pkgs.fishPlugins.wslwrap) ];
 
     # settings

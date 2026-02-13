@@ -7,7 +7,7 @@
 }:
 lib.mkIf config.programs.fzf.enable {
   programs.fish = {
-    # install fzf-fish
+    # fzf-fish: 🔍🐟 Fzf plugin for Fish
     plugins = [ (localLib.mkPlugin pkgs.fishPlugins.fzf-fish) ];
 
     # fzf-fish settings
