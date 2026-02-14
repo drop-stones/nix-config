@@ -12,7 +12,7 @@
   ];
 
   # decryption key
-  age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  age.identityPaths = [ "${data.user.homeDirectory}/.local/share/age/key.txt" ];
 
   age.secrets."gitconfig" = {
     symlink = true;
