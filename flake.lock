@@ -161,11 +161,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1770136044,
-        "narHash": "sha256-tlFqNG/uzz2++aAmn4v8J0vAkV3z7XngeIIB3rM3650=",
+        "lastModified": 1771043024,
+        "narHash": "sha256-O1XDr7EWbRp+kHrNNgLWgIrB0/US5wvw9K6RERWAj6I=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e576e3c9cf9bad747afcddd9e34f51d18c855b4e",
+        "rev": "3aadb7ca9eac2891d52a9dec199d9580a6e2bf44",
         "type": "github"
       },
       "original": {
@@ -178,11 +178,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1770127594,
-        "narHash": "sha256-76yy9Eiji3Lue8Up8OPoxKmzLkdPa8gHu8oYu3zd+TY=",
+        "lastModified": 1770900850,
+        "narHash": "sha256-kcU3dPMR7ClXQTVBPqlefXmkfK2VxzCiOjlYK+3C+fk=",
         "owner": "drop-stones",
         "repo": "nvim-config",
-        "rev": "f4b50c324a994d983f64ac1acb88d245cecfde5a",
+        "rev": "5a614fcaaf8ddb1b18059a3941fe2b8608252309",
         "type": "github"
       },
       "original": {
@@ -208,11 +208,11 @@
     "secrets-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1770388864,
-        "narHash": "sha256-YOAXaPXo86moX62nNfosG/dNnka4y6Y3Pu8/iCozOnQ=",
+        "lastModified": 1771144432,
+        "narHash": "sha256-/mFWvouNHfp0Vce/90w2YrOP9BJKe/KLvK5p0B/1NYQ=",
         "ref": "refs/heads/main",
-        "rev": "1361974ef6205c8c242c1f004eb0a16813e29bea",
-        "revCount": 3,
+        "rev": "e5940ffb95028747550fd57978c5a9b07ee63685",
+        "revCount": 9,
         "type": "git",
         "url": "ssh://git@github.com/drop-stones/secrets-config"
       },
@@ -239,11 +239,11 @@
     "wslwrap-fish": {
       "flake": false,
       "locked": {
-        "lastModified": 1769342274,
-        "narHash": "sha256-W78VLR9WUe/jijAhCkxATOQ5zm/siTk5bbSeHOI/ChM=",
+        "lastModified": 1771116212,
+        "narHash": "sha256-opjHtAFzW6yhrYVkDM/Z7BEhdbrP7osLAbTFFtYS8Ks=",
         "owner": "drop-stones",
         "repo": "wslwrap.fish",
-        "rev": "87581afb35a58d47b319427ccb3a6cd2ef4b2697",
+        "rev": "9b108a7d7874480b0e3761dc0a10bb70dd81f333",
         "type": "github"
       },
       "original": {
