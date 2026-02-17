@@ -24,7 +24,10 @@ in
   # configure tide after `nixos-rebuild switch`
   home.activation = {
     tideConfigure = lib.hm.dag.entryAfter [ "installPackages" ] ''
-      ${pkgs.fish}/bin/fish -lc "tide configure ${tideArgs}" 2>&1 >/dev/null
+      ${pkgs.fish}/bin/fish -lc "
+        tide configure ${tideArgs}
+        set -U tide_git_truncation_length 64
+      " 2>&1 >/dev/null
     '';
   };
 }
