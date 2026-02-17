@@ -21,7 +21,6 @@
     wslwrap link cmd.exe
     wslwrap link powershell.exe
     wslwrap link pwsh.exe
-    wslwrap link win32yank.exe
     ${lib.optionalString data.git.enable "wslwrap link op-ssh-sign-wsl.exe"}
   '';
 }
