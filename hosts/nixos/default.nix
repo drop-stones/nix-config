@@ -6,6 +6,7 @@ let
   nixos-modules = [
     (localLib.fromRoot "system/nixos")
     ./disko.nix
+    ./hardware-configuration.nix
   ];
   home-modules = [ (localLib.fromRoot "home/nixos") ];
   specialArgs = inputs // {
