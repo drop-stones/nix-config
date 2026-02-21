@@ -34,6 +34,13 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # fcitx5-hazkey packaged for NixOS
+    nix-hazkey = {
+      url = "github:aster-void/nix-hazkey";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
     # private secrets
     secrets-config = {
       url = "git+ssh://git@github.com/drop-stones/secrets-config";
