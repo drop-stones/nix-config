@@ -2,6 +2,7 @@
 {
   imports = localLib.listSystemModules [
     "apps"
+    "desktop"
     "dev"
   ];
 }
