@@ -2,6 +2,47 @@
 
 ## Installation
 
+### 🐧 NixOS
+
+#### Step.1 Create Minimal ISO USB
+
+#### Step.2 Disk partitioning
+
+Check your device name:
+
+```bash
+lsblk
+```
+
+Create new hosts and set device name for disko.  
+And then, execute `disko`.
+
+```bash
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- \
+  --mode zap_create_mount \
+  --flake github:drop-stones/nix-config#nixos
+```
+
+Finally, generate `hardware-configuration.nix` and add this as your a new host module.
+
+```bash
+sudo nixos-generate-config --no-filesystems --root /mnt
+cat /mnt/etc/nixos/hardware-configuration.nix
+```
+
+#### Step.3 Install `nix-config`
+
+```bash
+sudo nixos-install --no-write-lock-file --flake github:drop-stones/nix-config#nixos
+```
+
+After installation, you need to set password:
+
+```bash
+passwd drop-stones
+reboot
+```
+
 ### 🍎 macOS
 
 [nix-darwin](https://github.com/nix-darwin/nix-darwin)
