@@ -5,6 +5,7 @@ let
   data = import (localLib.fromRoot "data") platform;
   nixos-modules = [
     (localLib.fromRoot "system/nixos")
+    ./configuration.nix
     ./disko.nix
     ./hardware-configuration.nix
   ];
