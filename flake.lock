@@ -157,6 +157,29 @@
         "type": "github"
       }
     },
+    "nix-hazkey": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771589177,
+        "narHash": "sha256-IBKPG6TvqueTcWqDiBCeKvj4BCbIYwDCMuv2rft9B18=",
+        "owner": "aster-void",
+        "repo": "nix-hazkey",
+        "rev": "2611828dcb4d4ac70498c6c41b9f240496cd3af2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aster-void",
+        "repo": "nix-hazkey",
+        "type": "github"
+      }
+    },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -219,6 +242,7 @@
         "home-manager": "home-manager",
         "initcache-fish": "initcache-fish",
         "nix-darwin": "nix-darwin",
+        "nix-hazkey": "nix-hazkey",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
         "nvim-config": "nvim-config",
