@@ -63,6 +63,26 @@
         "type": "github"
       }
     },
+    "dgop": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771340270,
+        "narHash": "sha256-rzyqTCp+B4T6UW7mKkUtPA4dk+cwsuGxIkstqG9dIUo=",
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "rev": "eae53d4cfd9da4e898d2c50dac645d0ef46b57c4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "dgop",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -282,6 +302,7 @@
       "inputs": {
         "agenix": "agenix",
         "betterescape-fish": "betterescape-fish",
+        "dgop": "dgop",
         "disko": "disko",
         "dms": "dms",
         "home-manager": "home-manager",

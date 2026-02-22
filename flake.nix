@@ -32,6 +32,12 @@
       url = "github:AvengeMedia/DankMaterialShell/stable";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # dgop: Dank GO Process Status (import dgop manually only for nixos-25.11)
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # secrets management
     agenix = {
       url = "github:ryantm/agenix";
