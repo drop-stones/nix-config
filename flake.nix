@@ -27,6 +27,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Dank Linux: Desktop shell for wayland compositors
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell/stable";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # secrets management
     agenix = {
       url = "github:ryantm/agenix";
