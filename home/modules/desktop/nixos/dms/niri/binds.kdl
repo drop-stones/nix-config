@@ -3,12 +3,10 @@
 //
 // Key remapping notes (DMS overrides niri defaults):
 // - Mod+V: Clipboard Manager (was: toggle-window-floating -> moved to Mod+Shift+T)
-// - Mod+Comma: Settings (was: consume-window-into-column -> use Mod+BracketLeft instead)
-// - Ctrl+Alt+Delete: Task Manager (was: quit -> use Mod+Shift+E instead)
 
 binds {
     // === Application Launchers (DMS) ===
-    Mod+Space hotkey-overlay-title="Application Launcher" {
+    Alt+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
     Mod+V hotkey-overlay-title="Clipboard Manager" {
@@ -23,9 +21,6 @@ binds {
     }
     Super+X hotkey-overlay-title="Power Menu" {
         spawn "dms" "ipc" "call" "powermenu" "toggle";
-    }
-    Mod+Comma hotkey-overlay-title="Settings" {
-        spawn "dms" "ipc" "call" "settings" "focusOrToggle";
     }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" {
         spawn "dms" "ipc" "call" "dankdash" "wallpaper";
