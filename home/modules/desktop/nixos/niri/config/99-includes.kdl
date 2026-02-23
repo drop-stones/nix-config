@@ -1,0 +1,9 @@
+// DMS auto-generated files (managed by DMS Settings GUI)
+// These are dynamically updated when you change settings in DMS
+include "dms/colors.kdl"
+include "dms/layout.kdl"
+include "dms/alttab.kdl"
+include "dms/wpblur.kdl"
+
+// Nix-managed DMS keybindings (overrides generic niri binds above)
+include "dms/binds.kdl"
