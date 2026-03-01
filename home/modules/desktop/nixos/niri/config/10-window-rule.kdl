@@ -39,3 +39,15 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
 }
+
+// Global opacity
+window-rule {
+  opacity 0.97
+}
+
+// Video exceptions
+window-rule {
+  match app-id="firefox" title="YouTube"
+  match app-id="firefox" title="Twitch"
+  opacity 1.0
+}
