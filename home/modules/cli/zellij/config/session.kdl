@@ -1,15 +1,11 @@
-// A fixed name to always give the Zellij session.
-// Consider also setting `attach_to_session true,`
-// otherwise this will error if such a session exists.
-// Default: <RANDOM>
+// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
+// eg. when terminal window with an active zellij session is closed
+// (Requires restart)
+// Options:
+//   - detach (Default)
+//   - quit
 //
-session_name "main"
-
-// When `session_name` is provided, attaches to that session
-// if it is already running or creates it otherwise.
-// Default: false
-//
-attach_to_session true
+on_force_close "quit"
 
 // Whether to show tips on startup
 // Default: true

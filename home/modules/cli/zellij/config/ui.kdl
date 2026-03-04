@@ -1,0 +1,13 @@
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+pane_frames false
+
+// Hides the session name (randomly generated or otherwise) from the UI
+ui {
+  pane_frames {
+    hide_session_name true
+  }
+}
