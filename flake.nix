@@ -11,7 +11,7 @@
 
     # WSL2
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/release-25.05";
+      url = "github:nix-community/NixOS-WSL/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
