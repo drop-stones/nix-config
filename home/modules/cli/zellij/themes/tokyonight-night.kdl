@@ -81,6 +81,14 @@ themes {
     }
 
     // Pane frames
+    frame_unselected {
+      base 56 62 90                // #383e5a — subtle blue-gray
+      background 0
+      emphasis_0 56 62 90
+      emphasis_1 56 62 90
+      emphasis_2 56 62 90
+      emphasis_3 56 62 90
+    }
     frame_selected {
       base 122 162 247             // blue frame
       background 0
