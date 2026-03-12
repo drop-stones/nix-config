@@ -276,6 +276,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1772736753,
+        "narHash": "sha256-au/m3+EuBLoSzWUCb64a/MZq6QUtOV8oC0D9tY2scPQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "917fec990948658ef1ccd07cef2a1ef060786846",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nvim-config": {
       "flake": false,
       "locked": {
@@ -330,7 +346,29 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim-config": "nvim-config",
         "secrets-config": "secrets-config",
-        "wslwrap-fish": "wslwrap-fish"
+        "wslwrap-fish": "wslwrap-fish",
+        "zellij-hud": "zellij-hud"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "zellij-hud",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772852295,
+        "narHash": "sha256-3FB/WzLZSiU2Mc50C9q9VXU1LRUZbsU6UHKmZG1C+hU=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "c10801f59c68e14c308aea8fa6b0b3d81d43c61e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "secrets-config": {
@@ -377,6 +415,25 @@
       "original": {
         "owner": "drop-stones",
         "repo": "wslwrap.fish",
+        "type": "github"
+      }
+    },
+    "zellij-hud": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2",
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1773330940,
+        "narHash": "sha256-1M/L+EKSs78ou3/0BAevU3IK6FlRgktWW0vQ+vxZy1w=",
+        "owner": "drop-stones",
+        "repo": "zellij-hud",
+        "rev": "607c1bfd94fe0532fcec577d54d0e977da44ed23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drop-stones",
+        "repo": "zellij-hud",
         "type": "github"
       }
     }
