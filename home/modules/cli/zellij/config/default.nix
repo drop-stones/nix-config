@@ -11,7 +11,7 @@ let
     ext = "kdl";
     outName = "zellij-config.kdl";
   };
-  hudPath = "${zellij-hud.packages.${pkgs.system}.default}/bin/zellij-hud.wasm";
+  hudPath = "${zellij-hud.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/zellij-hud.wasm";
 in
 {
   xdg.configFile."zellij/config.kdl".text = builtins.readFile baseConfig + ''
