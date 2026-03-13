@@ -1,0 +1,2 @@
+// Start xwayland-satellite for X11 app compatibility (e.g. Steam)
+spawn-at-startup "xwayland-satellite"
