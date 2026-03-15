@@ -6,7 +6,13 @@ let
   darwin-modules = [ (localLib.fromRoot "system/darwin") ];
   home-modules = [ (localLib.fromRoot "home/darwin") ];
   specialArgs = inputs // {
-    inherit data platform system;
+    inherit data platform;
+
+    # custom pkgs
+    pkgs-unstable = import inputs.nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   };
   args = {
     inherit
