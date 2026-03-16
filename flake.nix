@@ -31,12 +31,7 @@
     # Dank Linux: Desktop shell for wayland compositors
     dms = {
       url = "github:AvengeMedia/DankMaterialShell/stable";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # dgop: Dank GO Process Status (import dgop manually only for nixos-25.11)
-    dgop = {
-      url = "github:AvengeMedia/dgop";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # secrets management
