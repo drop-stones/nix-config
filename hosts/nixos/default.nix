@@ -12,12 +12,7 @@ let
   home-modules = [ (localLib.fromRoot "home/nixos") ];
   specialArgs = inputs // {
     inherit data platform;
-
-    # custom pkgs
-    pkgs-unstable = import inputs.nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    pkgs-unstable = localLib.mkPkgs inputs.nixpkgs-unstable system;
   };
   args = {
     inherit
