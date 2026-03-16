@@ -1,14 +1,14 @@
 {
+  pkgs,
   agenix,
   secrets-config,
-  system,
   data,
   ...
 }:
 {
   imports = [
     agenix.nixosModules.default
-    { environment.systemPackages = [ agenix.packages.${system}.default ]; }
+    { environment.systemPackages = [ agenix.packages.${pkgs.stdenv.hostPlatform.system}.default ]; }
   ];
 
   # decryption key
