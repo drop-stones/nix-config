@@ -2,8 +2,8 @@
 _: {
   programs.dank-material-shell.settings = {
     # Theme
-    currentThemeName = "purple";
-    currentThemeCategory = "generic";
+    currentThemeName = "dynamic";
+    currentThemeCategory = "dynamic";
     customThemeFile = "";
     registryThemeVariants = { };
 
@@ -71,7 +71,7 @@ _: {
     matugenTemplateKitty = true;
     matugenTemplateFoot = true;
     matugenTemplateAlacritty = true;
-    matugenTemplateNeovim = true;
+    matugenTemplateNeovim = false; # nvim config is managed by a separate flake (read-only in nix store)
     matugenTemplateWezterm = true;
     matugenTemplateVscode = true;
   };
