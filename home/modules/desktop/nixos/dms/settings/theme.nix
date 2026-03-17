@@ -7,8 +7,13 @@ _: {
     customThemeFile = "";
     registryThemeVariants = { };
 
-    # Night mode
-    nightModeEnabled = false;
+    # Night mode (time-based automation: 18:00 - 06:00)
+    nightModeEnabled = true;
+    nightModeAutoMode = "time";
+    nightModeStartHour = 18;
+    nightModeStartMinute = 0;
+    nightModeEndHour = 6;
+    nightModeEndMinute = 0;
 
     # Matugen color scheme
     matugenScheme = "scheme-tonal-spot";
