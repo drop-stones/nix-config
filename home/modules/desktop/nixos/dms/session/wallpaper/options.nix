@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, wallpapers, ... }:
 {
   options.services.dms-wallpaper = {
     enable = lib.mkOption {
@@ -10,19 +10,19 @@
     directories = {
       morning = lib.mkOption {
         type = lib.types.str;
-        default = "~/Pictures/Wallpapers/morning";
+        default = "${wallpapers}/21_9/morning";
         description = "Directory containing morning wallpapers (6:00-12:00)";
       };
 
       afternoon = lib.mkOption {
         type = lib.types.str;
-        default = "~/Pictures/Wallpapers/afternoon";
+        default = "${wallpapers}/21_9/afternoon";
         description = "Directory containing afternoon wallpapers (12:00-18:00)";
       };
 
       night = lib.mkOption {
         type = lib.types.str;
-        default = "~/Pictures/Wallpapers/night";
+        default = "${wallpapers}/21_9/night";
         description = "Directory containing night wallpapers (18:00-6:00)";
       };
     };

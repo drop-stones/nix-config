@@ -54,6 +54,12 @@
       flake = false;
     };
 
+    # wallpapers
+    wallpapers = {
+      url = "git+ssh://git@github.com/drop-stones/wallpapers";
+      flake = false;
+    };
+
     # nvim-config
     nvim-config = {
       url = "github:drop-stones/nvim-config";

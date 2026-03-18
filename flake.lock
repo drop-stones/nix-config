@@ -343,6 +343,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim-config": "nvim-config",
         "secrets-config": "secrets-config",
+        "wallpapers": "wallpapers",
         "wslwrap-fish": "wslwrap-fish",
         "zellij-hud": "zellij-hud"
       }
@@ -412,6 +413,22 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "wallpapers": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1773755176,
+        "narHash": "sha256-bB8jXD/EFsHwLWiFdthzcFaH5i9F39/mjXgnnJKp+O4=",
+        "ref": "refs/heads/main",
+        "rev": "1686f6d8712137ad9a2904f575969af9a84cd27c",
+        "revCount": 5,
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/wallpapers"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/wallpapers"
       }
     },
     "wslwrap-fish": {

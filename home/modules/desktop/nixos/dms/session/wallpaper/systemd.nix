@@ -18,10 +18,11 @@ in
     systemd.user.services.dms-wallpaper-switcher = {
       Unit = {
         Description = "DMS Wallpaper Period Switcher";
-        After = [
-          "graphical-session.target"
-          "dms.service"
-        ];
+        After = [ "dms.service" ];
+        Wants = [ "dms.service" ];
+      };
+      Install = {
+        WantedBy = [ "dms.service" ];
       };
       Service = {
         Type = "oneshot";
@@ -44,7 +45,6 @@ in
           "*-*-* 12:00:00"
           "*-*-* 18:00:00"
         ];
-        OnStartupSec = "10s";
         Persistent = true;
       };
       Install = {
