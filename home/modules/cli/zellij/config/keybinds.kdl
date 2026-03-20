@@ -105,6 +105,14 @@ keybinds clear-defaults=true {
   session {
     // detach
     bind "d" { Detach; }
+    // zellij-loom
+    bind "l" {
+      LaunchOrFocusPlugin "zellij-loom" {
+        floating true
+        move_to_focused_tab true
+      }
+      SwitchToMode "Locked"
+    }
     // session manager
     bind "w" {
       LaunchOrFocusPlugin "session-manager" {
