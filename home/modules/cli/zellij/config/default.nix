@@ -1,24 +1,9 @@
+{ pkgs, localLib, ... }:
 {
-  pkgs,
-  localLib,
-  zellij-hud,
-  ...
-}:
-let
-  baseConfig = localLib.concatConfig {
+  xdg.configFile."zellij/config.kdl".source = localLib.concatConfig {
     inherit pkgs;
     dir = ./.;
     ext = "kdl";
     outName = "zellij-config.kdl";
   };
-  hudPath = "${zellij-hud.packages.${pkgs.stdenv.hostPlatform.system}.default}/bin/zellij-hud.wasm";
-in
-{
-  xdg.configFile."zellij/config.kdl".text = builtins.readFile baseConfig + ''
-    load_plugins {
-      "file:${hudPath}" {
-        theme "tokyonight"
-      }
-    }
-  '';
 }

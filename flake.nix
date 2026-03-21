@@ -66,11 +66,6 @@
       flake = false;
     };
 
-    # zellij plugins
-    zellij-hud = {
-      url = "github:drop-stones/zellij-hud";
-    };
-
     # fish plugins
     betterescape-fish = {
       url = "github:drop-stones/betterescape.fish";
