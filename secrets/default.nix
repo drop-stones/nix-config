@@ -41,5 +41,14 @@
       group = "users";
       mode = "0400";
     };
+    # copilot
+    "copilot-instructions" = {
+      symlink = true;
+      path = "${data.user.homeDirectory}/.config/copilot/copilot-instructions.md";
+      file = "${secrets-config}/nixos-wsl/copilot/copilot-instructions.md.age";
+      owner = "${data.user.username}";
+      group = "users";
+      mode = "0400";
+    };
   };
 }
