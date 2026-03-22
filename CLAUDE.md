@@ -9,7 +9,7 @@ This is a NixOS and Home Manager configuration repository supporting multiple pl
 
 ## Repository Structure
 
-- `hosts/` - Host-specific configurations (nixos, nixos-wsl, nixos-wsl-work, darwin-intel)
+- `hosts/` - Host-specific configurations (nixos, nixos-wsl, nixos-wsl-work, darwin)
 - `home/` - Home Manager modules
   - `modules/shell/` - Shell environment and terminal tools (fish, zellij, bat, fzf, etc.)
   - `modules/dev/` - Development tools (git, neovim, claude-code, copilot, ssh, etc.)

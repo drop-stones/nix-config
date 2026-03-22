@@ -102,7 +102,7 @@
         nixos-wsl-work = import ./hosts/nixos-wsl-work args;
       };
       darwinConfigurations = {
-        darwin-intel = import ./hosts/darwin-intel args;
+        darwin = import ./hosts/darwin args;
       };
     };
 }
