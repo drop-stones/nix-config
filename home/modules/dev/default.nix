@@ -1,7 +1,4 @@
-{ platform, localLib, ... }:
+{ localLib, ... }:
 {
-  imports = localLib.listPlatformImports {
-    dir = ./.;
-    inherit platform;
-  };
+  imports = localLib.listImports ./.;
 }
