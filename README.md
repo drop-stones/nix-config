@@ -1,99 +1,44 @@
 # nix-config
 
+NixOS and Home Manager configuration for multiple platforms.
+
+## Supported Platforms
+
+| Host | Platform | Architecture | Description |
+|------|----------|-------------|-------------|
+| [`nixos`](hosts/nixos/) | NixOS | x86_64-linux | Standalone NixOS desktop |
+| [`nixos-wsl`](hosts/nixos-wsl/) | NixOS on WSL2 | x86_64-linux | WSL2 personal environment |
+| [`nixos-wsl-work`](hosts/nixos-wsl-work/) | NixOS on WSL2 | x86_64-linux | WSL2 work environment (with [secrets](secrets/)) |
+| [`darwin`](hosts/darwin/) | macOS (nix-darwin) | x86_64-darwin | Intel Mac |
+
+## Repository Structure
+
+```
+.
+├── hosts/           # Host-specific configurations
+├── home/            # Home Manager modules
+│   └── modules/
+│       ├── shell/   # Shell and terminal tools (fish, zellij, bat, fzf, ...)
+│       ├── dev/     # Development tools (git, neovim, claude-code, ...)
+│       ├── apps/    # GUI applications (firefox, alacritty, 1password, ...)
+│       ├── desktop/ # Desktop environment (niri, fonts, theme, fcitx5, ...)
+│       └── lang/    # Language toolchains (nix, rust, python, nodejs, ...)
+├── system/          # NixOS/darwin system modules
+├── lib/             # Custom Nix library functions
+├── pkgs/            # Custom packages
+├── overlays/        # Nixpkgs overlays
+├── data/            # Per-user/platform data (username, homeDirectory, ...)
+└── secrets/         # Secret management (agenix)
+```
+
 ## Installation
 
-### 🐧 NixOS
+See the README in each host directory:
 
-#### Step.1 Create Minimal ISO USB
+- [NixOS installation](hosts/nixos/README.md)
+- [macOS (darwin) installation](hosts/darwin/README.md)
+- [WSL2 installation](hosts/nixos-wsl/README.md)
 
-#### Step.2 Disk partitioning
+## Secrets
 
-Check your device name:
-
-```bash
-lsblk
-```
-
-Create new hosts and set device name for disko.  
-And then, execute `disko`.
-
-```bash
-sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- \
-  --mode zap_create_mount \
-  --flake github:drop-stones/nix-config#nixos
-```
-
-Finally, generate `hardware-configuration.nix` and add this as your a new host module.
-
-```bash
-sudo nixos-generate-config --no-filesystems --root /mnt
-cat /mnt/etc/nixos/hardware-configuration.nix
-```
-
-#### Step.3 Install `nix-config`
-
-```bash
-sudo nixos-install --no-write-lock-file --flake github:drop-stones/nix-config#nixos
-```
-
-After installation, you need to set password:
-
-```bash
-passwd drop-stones
-reboot
-```
-
-### 🍎 macOS
-
-[nix-darwin](https://github.com/nix-darwin/nix-darwin)
-
-#### Step.1 Install `nix`
-
-[Downlaod Nix](https://nixos.org/download/#nix-install-macos)
-
-```bash
-sh <(curl --proto '=https' --tlsv1.2 -L https://nixos.org/nix/install)
-```
-
-#### Step.2 Rebuild with `nix-config`
-
-[nix-config](https://github.com/drop-stones/nix-config)
-
-```bash
-sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/nix-darwin-25.11#darwin-rebuild -- switch --flake "github:drop-stones/nix-config#darwin-intel"
-```
-
-#### Step.3 Configure Apps
-
-- [1Password](https://1password.com)
-  - Disable auto updates: Settings > Advanced > Install updates automatically
-  - Enable ssh-agent: Settings > Developer > Use the SSH Agent
-
-### 🪟 WSL2
-
-[NixOS-WSL](https://github.com/nix-community/NixOS-WSL)
-
-#### Step.1 Install `NixOS-WSL`
-
-1. Download the latest release from [NixOS-WSL Release](https://github.com/nix-community/NixOS-WSL/releases)
-2. Double-click the file you just downloaded
-3. Run NixOS:
-
-   ```bash
-   wsl -d NixOS
-   ```
-
-4. Update NixOS:
-
-   ```bash
-   sudo nix-channel --update
-   sudo nixos-rebuild switch
-   ```
-
-#### Step.2 Rebuild with `nix-config`
-
-[nix-config](https://github.com/drop-stones/nix-config)
-
-```bash
-sudo nixos-rebuild switch --flake "github:drop-stones/nix-config#nixos-wsl"
-```
+See [secrets/README.md](secrets/README.md) for the agenix-based secrets system.
