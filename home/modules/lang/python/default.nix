@@ -1,7 +1,4 @@
-{ pkgs, ... }:
+{ localLib, ... }:
 {
-  # python: The Python programming language
-  home.packages = with pkgs; [
-    python3
-  ];
+  imports = localLib.listImports ./.;
 }
