@@ -3,10 +3,7 @@ let
   platform = "nixos-wsl";
   system = "x86_64-linux";
   data = import (localLib.fromRoot "data") "work";
-  nixos-modules = [
-    (localLib.fromRoot "system/nixos-wsl")
-    (localLib.fromRoot "secrets")
-  ];
+  nixos-modules = [ (localLib.fromRoot "system/nixos-wsl") ];
   home-modules = [ (localLib.fromRoot "home/nixos-wsl") ];
   specialArgs = inputs // {
     inherit data platform;
