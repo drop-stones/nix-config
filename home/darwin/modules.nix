@@ -2,7 +2,7 @@
 {
   imports = localLib.listHomeModules [
     "apps"
-    "cli"
+    "shell"
     "desktop"
     "dev"
     "lang"

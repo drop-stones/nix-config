@@ -1,7 +1,7 @@
 { localLib, ... }:
 {
   imports = localLib.listHomeModules [
-    "cli"
+    "shell"
     "desktop"
     "dev"
     "lang"
