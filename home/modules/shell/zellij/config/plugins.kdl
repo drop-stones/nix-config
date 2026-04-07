@@ -20,7 +20,10 @@ plugins {
   zellij-loom location="https://github.com/drop-stones/zellij-loom/releases/latest/download/zellij-loom.wasm" {
     keybind_mode "vim"
   }
-  zellij-hud location="https://github.com/drop-stones/zellij-hud/releases/latest/download/zellij-hud.wasm"
+  zellij-hud location="https://github.com/drop-stones/zellij-hud/releases/latest/download/zellij-hud.wasm" {
+    style "powerline"
+    theme "tokyonight"
+  }
 }
 
 load_plugins {
