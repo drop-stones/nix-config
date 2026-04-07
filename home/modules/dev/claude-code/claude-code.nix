@@ -1,5 +1,5 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   # Claude Code: an agentic coding tool
-  home.packages = [ pkgs-unstable.claude-code ];
+  home.packages = [ pkgs.claude-code ];
 }
