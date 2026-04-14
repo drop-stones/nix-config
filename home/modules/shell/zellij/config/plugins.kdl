@@ -24,8 +24,12 @@ plugins {
     style "powerline"
     theme "tokyonight"
   }
+  im-switch location="https://github.com/drop-stones/im-switch.zellij/releases/latest/download/im-switch.wasm" {
+    default_im "keyboard-us"
+  }
 }
 
 load_plugins {
   "zellij-hud"
+  "im-switch"
 }
