@@ -3,7 +3,6 @@ keybinds clear-defaults=true {
     // switch to other modes
     bind "r" { SwitchToMode "Resize"; }
     bind "p" { SwitchToMode "Pane"; }
-    bind "m" { SwitchToMode "Move"; }
     bind "t" { SwitchToMode "Tab"; }
     bind "s" { SwitchToMode "Scroll"; }
     bind "o" { SwitchToMode "Session"; }
@@ -35,6 +34,11 @@ keybinds clear-defaults=true {
     bind "j" { MoveFocus "Down"; }
     bind "k" { MoveFocus "Up"; }
     bind "l" { MoveFocus "Right"; }
+    // move pane
+    bind "H" { MovePane "Left"; }
+    bind "J" { MovePane "Down"; }
+    bind "K" { MovePane "Up"; }
+    bind "L" { MovePane "Right"; }
     // new pane
     bind "n" { NewPane; SwitchToMode "Locked"; }
     bind "s" { NewPane "Down"; SwitchToMode "Locked"; }
@@ -49,16 +53,6 @@ keybinds clear-defaults=true {
     bind "w" { ToggleFloatingPanes; SwitchToMode "Locked"; }
     bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Locked"; }
   }
-  move {
-    // move pane by direction
-    bind "h" { MovePane "Left"; }
-    bind "j" { MovePane "Down"; }
-    bind "k" { MovePane "Up"; }
-    bind "l" { MovePane "Right"; }
-    // move tab
-    bind "H" { MoveTab "Left"; }
-    bind "L" { MoveTab "Right"; }
-  }
   tab {
     // new tab
     bind "n" { NewTab; SwitchToMode "Locked"; }
@@ -67,6 +61,9 @@ keybinds clear-defaults=true {
     // focus tab by direction
     bind "h" { GoToPreviousTab; }
     bind "l" { GoToNextTab; }
+    // move tab
+    bind "H" { MoveTab "Left"; }
+    bind "L" { MoveTab "Right"; }
     // rename tab
     bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
     // sync input between all panes in tab
