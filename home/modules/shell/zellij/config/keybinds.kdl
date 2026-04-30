@@ -153,6 +153,31 @@ keybinds clear-defaults=true {
   }
   shared {
     bind "Ctrl q" { Quit; }
+    // zellij-dispatch: seamless pane navigation with process-aware passthrough
+    bind "Ctrl h" {
+      MessagePlugin "zellij-dispatch" {
+        name "MoveFocus Left";
+        payload "Ctrl h";
+      };
+    }
+    bind "Ctrl j" {
+      MessagePlugin "zellij-dispatch" {
+        name "MoveFocus Down";
+        payload "Ctrl j";
+      };
+    }
+    bind "Ctrl k" {
+      MessagePlugin "zellij-dispatch" {
+        name "MoveFocus Up";
+        payload "Ctrl k";
+      };
+    }
+    bind "Ctrl l" {
+      MessagePlugin "zellij-dispatch" {
+        name "MoveFocus Right";
+        payload "Ctrl l";
+      };
+    }
   }
   shared_except "locked" {
     bind "Enter" "Esc" { SwitchToMode "Locked"; }

@@ -27,6 +27,9 @@ plugins {
   im-switch location="https://github.com/drop-stones/im-switch.zellij/releases/latest/download/im-switch.wasm" {
     default_im "keyboard-us"
   }
+  zellij-dispatch location="https://github.com/drop-stones/zellij-dispatch/releases/latest/download/zellij-dispatch.wasm" {
+    match_processes "nvim"
+  }
 }
 
 load_plugins {
