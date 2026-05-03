@@ -178,6 +178,9 @@ keybinds clear-defaults=true {
         payload "Ctrl l";
       };
     }
+    // focus tab by direction
+    bind "Ctrl H" { GoToPreviousTab; }
+    bind "Ctrl L" { GoToNextTab; }
   }
   shared_except "locked" {
     bind "Enter" "Esc" { SwitchToMode "Locked"; }
