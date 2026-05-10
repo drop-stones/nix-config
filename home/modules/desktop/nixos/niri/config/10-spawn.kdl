@@ -8,3 +8,8 @@
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
+
+// Start Firefox on login so the 1Password browser extension connects before the
+// user unlocks 1Password.  Without an extension connection, the SSH agent fails
+// to initialize its settings store (~50% of reboots).
+spawn-at-startup "firefox"
