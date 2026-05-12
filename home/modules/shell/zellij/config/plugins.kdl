@@ -33,6 +33,7 @@ plugins {
 }
 
 load_plugins {
-  "zellij-hud"
   "im-switch"
+  "zellij-dispatch"
+  "zellij-hud"
 }
