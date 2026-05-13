@@ -23,5 +23,5 @@ sudo nix --extra-experimental-features "nix-command flakes" run nix-darwin/nix-d
 
 ### 1Password
 
-1. Disable auto updates: Settings > Advanced > Install updates automatically
-2. Enable SSH agent: Settings > Developer > Use the SSH Agent
+See [system/modules/apps/common/1password/README.md](../../system/modules/apps/common/1password/README.md)
+for the manual GUI settings that must be enabled after first launch.

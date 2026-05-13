@@ -48,3 +48,10 @@ Set the user password and reboot:
 passwd drop-stones
 reboot
 ```
+
+## Step 6: Configure Apps
+
+### 1Password
+
+See [system/modules/apps/common/1password/README.md](../../system/modules/apps/common/1password/README.md)
+for the manual GUI settings that must be enabled after first launch.
