@@ -48,6 +48,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
+    # Declarative Flatpak package management via home-manager
+    nix-flatpak = {
+      url = "github:gmodena/nix-flatpak/?ref=latest";
+    };
+
     # private secrets
     secrets-config = {
       url = "git+ssh://git@github.com/drop-stones/secrets-config";
