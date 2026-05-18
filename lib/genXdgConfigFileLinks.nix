@@ -1,18 +1,26 @@
-# genXdgConfigFileLinks :: String -> Path -> AttrSet
+# genXdgConfigFileLinks :: { name :: String, path :: Path } -> AttrSet
 #
-# Returns an attribute set mapping each entry directly under the given directory
-# (both files and directories) to a name.source pair suitable for xdg.configFile.
+# Recursively walks `path` and produces an attribute set suitable for
+# xdg.configFile, where every leaf file becomes its own entry. Intermediate
+# directories are therefore materialized as real directories by home-manager,
+# allowing other modules (e.g. agenix) to drop additional files into the same
+# tree without colliding with a directory-level symlink to the read-only nix
+# store.
 { lib, ... }:
 { name, path }:
 let
-  entries = builtins.readDir path;
-  names = builtins.attrNames entries;
+  go =
+    relName: absPath:
+    lib.concatMapAttrs (
+      entry: type:
+      let
+        entryPath = absPath + "/${entry}";
+        entryName = "${relName}/${entry}";
+      in
+      if type == "directory" then
+        go entryName entryPath
+      else
+        { ${entryName} = { source = entryPath; }; }
+    ) (builtins.readDir absPath);
 in
-builtins.listToAttrs (
-  map (entry: {
-    name = "${name}/${entry}";
-    value = {
-      source = path + "/" + entry;
-    };
-  }) names
-)
+go name path
