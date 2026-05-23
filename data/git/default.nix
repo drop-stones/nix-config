@@ -1,1 +1,1 @@
-plaform: import (./. + "/${plaform}.nix")
+platform: import (./. + "/${platform}.nix")
