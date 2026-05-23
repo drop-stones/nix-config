@@ -10,10 +10,10 @@ and (potentially) the 1Password CLI.
 | Install 1Password GUI | [`1password-gui.nix`](./1password-gui.nix) | NixOS, darwin |
 | Enable system integration (`programs._1password`) | [`1password.nix`](./1password.nix) | NixOS, darwin |
 | polkit policy owner | [`../../nixos/1password/`](../../nixos/1password/) | NixOS |
-| Autostart on graphical session | [`home/modules/apps/nixos/1password/systemd.nix`](../../../../../home/modules/apps/nixos/1password/systemd.nix) | NixOS |
-| `SSH_AUTH_SOCK` / `IdentityAgent` → 1Password agent | [`home/modules/dev/ssh/{nixos,darwin}/1password.nix`](../../../../../home/modules/dev/ssh/) | NixOS, darwin |
+| Autostart on graphical session | [`modules/home/apps/nixos/1password/systemd.nix`](../../../../../modules/home/apps/nixos/1password/systemd.nix) | NixOS |
+| `SSH_AUTH_SOCK` / `IdentityAgent` → 1Password agent | [`modules/home/dev/ssh/{nixos,darwin}/1password.nix`](../../../../../modules/home/dev/ssh/) | NixOS, darwin |
 | Git commit signing via 1Password SSH key | [`data/git/*.nix`](../../../../../data/git/) | All |
-| WSL: symlink Windows `op-ssh-sign-wsl.exe` into WSL `PATH` | [`home/modules/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix`](../../../../../home/modules/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix) | WSL |
+| WSL: symlink Windows `op-ssh-sign-wsl.exe` into WSL `PATH` | [`modules/home/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix`](../../../../../modules/home/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix) | WSL |
 
 ## Manual GUI Setup (per device)
 
