@@ -1,6 +1,6 @@
-{ data, ... }:
+{ host, ... }:
 {
-  users.users.${data.user.username} = {
+  users.users.${host.user.username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"

@@ -1,5 +1,5 @@
-{ data, lib, localLib, ... }:
+{ host, lib, localLib, ... }:
 {
   # Skip installation when using secrets (e.g., work environment)
-  imports = lib.optionals (!(data.user.useSecrets or false)) (localLib.listImports ./.);
+  imports = lib.optionals (!(host.user.useSecrets or false)) (localLib.listImports ./.);
 }

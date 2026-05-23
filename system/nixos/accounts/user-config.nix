@@ -1,7 +1,7 @@
 # User configuration file for AccountsService
-{ data, pkgs, ... }:
+{ host, pkgs, ... }:
 let
-  inherit (data.user) username;
+  inherit (host.user) username;
 
   userConfig = pkgs.writeText "accountsservice-user-${username}" ''
     [User]

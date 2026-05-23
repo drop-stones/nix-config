@@ -1,4 +1,4 @@
-{ data, ... }:
+{ host, ... }:
 {
-  programs.git = data.git;
+  programs.git = host.git;
 }

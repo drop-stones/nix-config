@@ -1,6 +1,6 @@
-{ data, ... }:
+{ host, ... }:
 {
   home.sessionVariables = {
-    SSH_AUTH_SOCK = "${data.user.homeDirectory}/.1password/agent.sock";
+    SSH_AUTH_SOCK = "${host.user.homeDirectory}/.1password/agent.sock";
   };
 }

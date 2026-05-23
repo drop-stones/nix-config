@@ -1,7 +1,7 @@
-{ pkgs, data, ... }:
+{ pkgs, host, ... }:
 {
   # Set fish as login shell
-  users.users.${data.user.username} = {
+  users.users.${host.user.username} = {
     shell = pkgs.fish;
   };
 }

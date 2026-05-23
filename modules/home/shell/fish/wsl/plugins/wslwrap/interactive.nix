@@ -1,4 +1,4 @@
-{ lib, data, ... }:
+{ lib, host, ... }:
 {
   programs.fish.interactiveShellInit = ''
     # wslwrap.fish
@@ -21,6 +21,6 @@
     wslwrap link cmd.exe
     wslwrap link powershell.exe
     wslwrap link pwsh.exe
-    ${lib.optionalString data.git.enable "wslwrap link op-ssh-sign-wsl.exe"}
+    ${lib.optionalString host.git.enable "wslwrap link op-ssh-sign-wsl.exe"}
   '';
 }

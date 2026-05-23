@@ -1,6 +1,6 @@
-{ data, ... }:
+{ host, ... }:
 {
-  users.users.${data.user.username}.extraGroups = [
+  users.users.${host.user.username}.extraGroups = [
     "networkmanager"
   ];
 }

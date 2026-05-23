@@ -1,7 +1,7 @@
 # Profile icon for AccountsService (used by greeter, lock screen, etc.)
-{ data, localLib, ... }:
+{ host, localLib, ... }:
 let
-  inherit (data.user) username;
+  inherit (host.user) username;
   iconPath = localLib.fromRoot "data/icon.jpg";
 in
 {
