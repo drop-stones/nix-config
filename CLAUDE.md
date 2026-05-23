@@ -9,14 +9,22 @@ This is a NixOS and Home Manager configuration repository supporting multiple pl
 
 ## Repository Structure
 
+The repository is organized into three conceptual layers:
+
+1. **host** — individual machine configurations (`hosts/`)
+2. **platform** — per-platform base settings and module enablement (`home/`, `system/`)
+3. **module** — reusable module library, basically platform-agnostic (`modules/`)
+
 - `hosts/` - Host-specific configurations (nixos, nixos-wsl, nixos-wsl-work, darwin)
-- `home/` - Home Manager modules
-  - `modules/shell/` - Shell environment and terminal tools (fish, zellij, bat, fzf, etc.)
-  - `modules/dev/` - Development tools (git, neovim, claude-code, copilot, ssh, etc.)
-  - `modules/apps/` - GUI applications (firefox, alacritty, steam, 1password)
-  - `modules/desktop/` - Desktop environment (DMS, niri, fonts, theme, fcitx5, etc.)
-  - `modules/lang/` - Language toolchains (nix, rust, python, nodejs, etc.)
-- `system/` - NixOS/darwin system modules
+- `home/` - Per-platform Home Manager base settings and module enablement (common, nixos, darwin, nixos-wsl)
+- `system/` - Per-platform NixOS/darwin base settings and module enablement (common, nixos, darwin, nixos-wsl)
+- `modules/` - Reusable module library
+  - `home/shell/` - Shell environment and terminal tools (fish, zellij, bat, fzf, etc.)
+  - `home/dev/` - Development tools (git, neovim, claude-code, copilot, ssh, etc.)
+  - `home/apps/` - GUI applications (firefox, alacritty, steam, 1password)
+  - `home/desktop/` - Desktop environment (DMS, niri, fonts, theme, fcitx5, etc.)
+  - `home/lang/` - Language toolchains (nix, rust, python, nodejs, etc.)
+  - `system/` - NixOS/darwin system modules (apps, desktop, dev)
 - `lib/` - Custom Nix library functions
 - `pkgs/` - Custom packages
 - `overlays/` - Nixpkgs overlays
@@ -35,8 +43,8 @@ Modules are categorized by **purpose**, not by implementation:
 
 ## Platform System
 
-- Modules under `apps/` and `desktop/` use `localLib.listPlatformImports` with `common/` and `<platform>/` subdirectories
-- Modules under `shell/`, `dev/`, and `lang/` use `localLib.listImports` (platform-agnostic at the top level)
+- Modules under `modules/home/apps/` and `modules/home/desktop/` use `localLib.listPlatformImports` with `common/` and `<platform>/` subdirectories
+- Modules under `modules/home/shell/`, `modules/home/dev/`, and `modules/home/lang/` use `localLib.listImports` (platform-agnostic at the top level)
 - Individual modules (e.g., `fish/`, `ssh/`) may use `listPlatformImports` internally for platform-specific variants
 - Use `data.user.useSecrets` to conditionally skip modules (e.g., claude-code) or config files (e.g., copilot-instructions.md)
 
