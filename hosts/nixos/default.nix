@@ -2,8 +2,8 @@
 let
   platform = "nixos";
   system = "x86_64-linux";
-  host = { inherit platform; };
   data = import (localLib.fromRoot "data") platform;
+  host = data // { inherit platform; };
   nixos-modules = [
     (localLib.fromRoot "system/nixos")
     ./configuration.nix

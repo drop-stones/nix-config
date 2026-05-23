@@ -2,8 +2,16 @@
 let
   platform = "wsl";
   system = "x86_64-linux";
-  host = { inherit platform; };
-  data = import (localLib.fromRoot "data") "work";
+  baseData = import (localLib.fromRoot "data") platform;
+  data = baseData // {
+    user = baseData.user // {
+      username = "work";
+      homeDirectory = "/home/work";
+      useSecrets = true;
+    };
+    git = { enable = false; };
+  };
+  host = data // { inherit platform; };
   nixos-modules = [ (localLib.fromRoot "system/wsl") ];
   home-modules = [ (localLib.fromRoot "home/wsl") ];
   specialArgs = inputs // {

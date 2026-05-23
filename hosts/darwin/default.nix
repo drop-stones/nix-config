@@ -2,8 +2,8 @@
 let
   platform = "darwin";
   system = "x86_64-darwin";
-  host = { inherit platform; };
   data = import (localLib.fromRoot "data") platform;
+  host = data // { inherit platform; };
   darwin-modules = [ (localLib.fromRoot "system/darwin") ];
   home-modules = [ (localLib.fromRoot "home/darwin") ];
   specialArgs = inputs // {
