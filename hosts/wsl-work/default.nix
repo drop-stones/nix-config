@@ -1,12 +1,13 @@
 { localLib, ... }@inputs:
 let
-  platform = "nixos-wsl";
+  platform = "wsl";
   system = "x86_64-linux";
-  data = import (localLib.fromRoot "data") platform;
-  nixos-modules = [ (localLib.fromRoot "system/nixos-wsl") ];
-  home-modules = [ (localLib.fromRoot "home/nixos-wsl") ];
+  host = { inherit platform; };
+  data = import (localLib.fromRoot "data") "work";
+  nixos-modules = [ (localLib.fromRoot "system/wsl") ];
+  home-modules = [ (localLib.fromRoot "home/wsl") ];
   specialArgs = inputs // {
-    inherit data platform;
+    inherit data host platform;
     pkgs-unstable = localLib.mkPkgs inputs.nixpkgs-unstable system;
   };
   args = {

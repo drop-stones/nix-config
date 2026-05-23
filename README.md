@@ -7,8 +7,8 @@ NixOS and Home Manager configuration for multiple platforms.
 | Host | Platform | Architecture | Description |
 |------|----------|-------------|-------------|
 | [`nixos`](hosts/nixos/) | NixOS | x86_64-linux | Standalone NixOS desktop |
-| [`nixos-wsl`](hosts/nixos-wsl/) | NixOS on WSL2 | x86_64-linux | WSL2 personal environment |
-| [`nixos-wsl-work`](hosts/nixos-wsl-work/) | NixOS on WSL2 | x86_64-linux | WSL2 work environment (with [secrets](secrets/)) |
+| [`nixos-wsl`](hosts/wsl/) | NixOS on WSL2 | x86_64-linux | WSL2 personal environment |
+| [`nixos-wsl-work`](hosts/wsl-work/) | NixOS on WSL2 | x86_64-linux | WSL2 work environment (with [secrets](secrets/)) |
 | [`darwin`](hosts/darwin/) | macOS (nix-darwin) | x86_64-darwin | Intel Mac |
 
 ## Repository Structure
@@ -37,7 +37,7 @@ See the README in each host directory:
 
 - [NixOS installation](hosts/nixos/README.md)
 - [macOS (darwin) installation](hosts/darwin/README.md)
-- [WSL2 installation](hosts/nixos-wsl/README.md)
+- [WSL2 installation](hosts/wsl/README.md)
 
 ## Secrets
 

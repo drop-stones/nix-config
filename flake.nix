@@ -103,8 +103,8 @@
     {
       nixosConfigurations = {
         nixos = import ./hosts/nixos args;
-        nixos-wsl = import ./hosts/nixos-wsl args;
-        nixos-wsl-work = import ./hosts/nixos-wsl-work args;
+        nixos-wsl = import ./hosts/wsl args;
+        nixos-wsl-work = import ./hosts/wsl-work args;
       };
       darwinConfigurations = {
         darwin = import ./hosts/darwin args;

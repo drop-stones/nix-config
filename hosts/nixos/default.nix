@@ -2,6 +2,7 @@
 let
   platform = "nixos";
   system = "x86_64-linux";
+  host = { inherit platform; };
   data = import (localLib.fromRoot "data") platform;
   nixos-modules = [
     (localLib.fromRoot "system/nixos")
@@ -11,7 +12,7 @@ let
   ];
   home-modules = [ (localLib.fromRoot "home/nixos") ];
   specialArgs = inputs // {
-    inherit data platform;
+    inherit data host platform;
     pkgs-unstable = localLib.mkPkgs inputs.nixpkgs-unstable system;
   };
   args = {

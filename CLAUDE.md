@@ -15,9 +15,9 @@ The repository is organized into three conceptual layers:
 2. **platform** — per-platform base settings and module enablement (`home/`, `system/`)
 3. **module** — reusable module library, basically platform-agnostic (`modules/`)
 
-- `hosts/` - Host-specific configurations (nixos, nixos-wsl, nixos-wsl-work, darwin)
-- `home/` - Per-platform Home Manager base settings and module enablement (common, nixos, darwin, nixos-wsl)
-- `system/` - Per-platform NixOS/darwin base settings and module enablement (common, nixos, darwin, nixos-wsl)
+- `hosts/` - Host-specific configurations (nixos, wsl, wsl-work, darwin)
+- `home/` - Per-platform Home Manager base settings and module enablement (common, nixos, darwin, wsl)
+- `system/` - Per-platform NixOS/darwin base settings and module enablement (common, nixos, darwin, wsl)
 - `modules/` - Reusable module library
   - `home/shell/` - Shell environment and terminal tools (fish, zellij, bat, fzf, etc.)
   - `home/dev/` - Development tools (git, neovim, claude-code, copilot, ssh, etc.)

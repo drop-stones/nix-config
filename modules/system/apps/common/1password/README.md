@@ -13,7 +13,7 @@ and (potentially) the 1Password CLI.
 | Autostart on graphical session | [`modules/home/apps/nixos/1password/systemd.nix`](../../../../../modules/home/apps/nixos/1password/systemd.nix) | NixOS |
 | `SSH_AUTH_SOCK` / `IdentityAgent` → 1Password agent | [`modules/home/dev/ssh/{nixos,darwin}/1password.nix`](../../../../../modules/home/dev/ssh/) | NixOS, darwin |
 | Git commit signing via 1Password SSH key | [`data/git/*.nix`](../../../../../data/git/) | All |
-| WSL: symlink Windows `op-ssh-sign-wsl.exe` into WSL `PATH` | [`modules/home/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix`](../../../../../modules/home/shell/fish/nixos-wsl/plugins/wslwrap/interactive.nix) | WSL |
+| WSL: symlink Windows `op-ssh-sign-wsl.exe` into WSL `PATH` | [`modules/home/shell/fish/wsl/plugins/wslwrap/interactive.nix`](../../../../../modules/home/shell/fish/wsl/plugins/wslwrap/interactive.nix) | WSL |
 
 ## Manual GUI Setup (per device)
 
