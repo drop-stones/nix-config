@@ -1,5 +1,5 @@
 # nixosSystem :: {
-#   data: { user: { username: string, useSecrets: bool?, ... }, ... },
+#   host: { user: { username: string, useSecrets: bool?, ... }, platform: string, ... },
 #   system: string,
 #   nixos-modules: [ module ],
 #   home-modules: [ module ],
@@ -8,7 +8,7 @@
 #
 # Build a NixOS system configuration and integrate Home Manager:
 # - appends home-manager.nixosModules.home-manager to the NixOS module list
-# - conditionally loads secrets/ when data.user.useSecrets is true
+# - conditionally loads secrets/ when host.user.useSecrets is true
 # - reuses the same pkgs set between NixOS and Home Manager
 # - forwards specialArgs to Home Manager via extraSpecialArgs
 # - imports the given Home Manager modules for the specified user
@@ -17,7 +17,7 @@ let
   fromRoot = import ./fromRoot.nix args;
 in
 {
-  data,
+  host,
   system,
   nixos-modules,
   home-modules,
@@ -29,7 +29,7 @@ lib.nixosSystem {
 
   modules =
     nixos-modules
-    ++ lib.optionals (data.user.useSecrets or false) [ (fromRoot "secrets") ]
+    ++ lib.optionals (host.user.useSecrets or false) [ (fromRoot "secrets") ]
     ++ [
       home-manager.nixosModules.home-manager
       {
@@ -37,7 +37,7 @@ lib.nixosSystem {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.${data.user.username}.imports = home-modules;
+          users.${host.user.username}.imports = home-modules;
         };
       }
     ];
