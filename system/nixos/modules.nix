@@ -4,5 +4,6 @@
     "apps"
     "desktop"
     "dev"
+    "hardware"
   ];
 }

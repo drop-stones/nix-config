@@ -24,7 +24,7 @@ The repository is organized into three conceptual layers:
   - `home/apps/` - GUI applications (firefox, alacritty, steam, 1password)
   - `home/desktop/` - Desktop environment (DMS, niri, fonts, theme, fcitx5, etc.)
   - `home/lang/` - Language toolchains (nix, rust, python, nodejs, etc.)
-  - `system/` - NixOS/darwin system modules (apps, desktop, dev)
+  - `system/` - NixOS/darwin system modules (apps, desktop, dev, hardware)
 - `lib/` - Custom Nix library functions
 - `pkgs/` - Custom packages
 - `overlays/` - Nixpkgs overlays
