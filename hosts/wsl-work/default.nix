@@ -12,8 +12,8 @@ let
     git = { enable = false; };
     inherit platform;
   };
-  nixos-modules = [ (localLib.fromRoot "system/wsl") ];
-  home-modules = [ (localLib.fromRoot "home/wsl") ];
+  nixos-modules = [ (localLib.fromRoot "system") ];
+  home-modules = [ (localLib.fromRoot "home") ];
   specialArgs = inputs // {
     inherit host;
     pkgs-unstable = localLib.mkPkgs inputs.nixpkgs-unstable system;

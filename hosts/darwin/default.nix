@@ -3,8 +3,8 @@ let
   platform = "darwin";
   system = "x86_64-darwin";
   host = (import (localLib.fromRoot "data") platform) // { inherit platform; };
-  darwin-modules = [ (localLib.fromRoot "system/darwin") ];
-  home-modules = [ (localLib.fromRoot "home/darwin") ];
+  darwin-modules = [ (localLib.fromRoot "system") ];
+  home-modules = [ (localLib.fromRoot "home") ];
   specialArgs = inputs // {
     inherit host;
     pkgs-unstable = localLib.mkPkgs inputs.nixpkgs-unstable system;
