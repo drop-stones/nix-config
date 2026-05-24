@@ -3,7 +3,7 @@
 # Convert importable entries in `dir` to an attrset:
 # - ./foo.nix          -> { foo = mkValue ./foo.nix; }
 # - ./bar/default.nix  -> { bar = mkValue ./bar; }
-{ lib, ... }@args:
+args:
 {
   dir,
   mkValue ? import,

@@ -1,4 +1,3 @@
-{ disko, ... }:
-{
+_: {
   disko.devices.disk.main.device = "/dev/nvme0n1";
 }

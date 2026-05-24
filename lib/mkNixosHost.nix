@@ -2,7 +2,7 @@
 #
 # Build a NixOS-flavored host (used for both `nixos` and `wsl` platforms,
 # since both run on NixOS via lib.nixosSystem).
-{ ... }@libInputs:
+libInputs:
 args:
 let
   prologue = import ./_hostPrologue.nix libInputs;

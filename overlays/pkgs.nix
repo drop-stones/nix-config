@@ -1,5 +1,5 @@
 { lib, localLib, ... }@args:
-final: prev:
+_final: prev:
 let
   localPkgs = import (localLib.fromRoot "pkgs") (args // { inherit prev; });
 in

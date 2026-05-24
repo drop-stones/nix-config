@@ -8,7 +8,7 @@
 # `inputs` is the host file's args (flake inputs + localLib); it gets
 # forwarded into specialArgs so modules can receive `localLib` and the
 # raw flake inputs.
-{ ... }@libInputs:
+libInputs:
 {
   inputs,
   hostDir,

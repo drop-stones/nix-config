@@ -1,7 +1,7 @@
 # mkDarwinHost :: { inputs, hostDir, platform, system, hostOverrides? } -> darwinSystem
 #
 # Build a darwin-flavored host via nix-darwin's darwinSystem.
-{ ... }@libInputs:
+libInputs:
 args:
 let
   prologue = import ./_hostPrologue.nix libInputs;
