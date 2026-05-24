@@ -1,8 +1,8 @@
 { host, localLib, ... }:
 {
-  imports = localLib.listImportsForPlatforms {
+  imports = localLib.listImports {
     platforms = [ "wsl" ];
-    platform = host.platform;
+    inherit host;
     dir = ./.;
   };
 }

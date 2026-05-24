@@ -2,5 +2,5 @@
 {
   imports = [
     dms.nixosModules.greeter
-  ] ++ localLib.listImports ./.;
+  ] ++ localLib.listImports { dir = ./.; };
 }

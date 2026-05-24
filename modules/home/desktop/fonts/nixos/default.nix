@@ -1,4 +1,4 @@
 { localLib, ... }:
 {
-  imports = localLib.listImports ./.;
+  imports = localLib.listImports { dir = ./.; };
 }

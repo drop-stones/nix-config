@@ -12,7 +12,7 @@ let
   pathToStem = import ./pathToStem.nix args;
   listImports = import ./listImports.nix args;
 
-  paths = listImports dir;
+  paths = listImports { inherit dir; };
 in
 builtins.listToAttrs (
   map (p: {

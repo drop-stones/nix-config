@@ -1,7 +1,7 @@
 { localLib, ... }:
 {
   imports =
-    (localLib.listImports ./.)
+    (localLib.listImports { dir = ./.; })
     ++ (map localLib.fromRoot [
       "system/common"
     ]);

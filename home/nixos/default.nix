@@ -1,4 +1,4 @@
 { localLib, ... }:
 {
-  imports = (localLib.listImports ./.) ++ [ (localLib.fromRoot "home/common") ];
+  imports = (localLib.listImports { dir = ./.; }) ++ [ (localLib.fromRoot "home/common") ];
 }
