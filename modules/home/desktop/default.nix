@@ -1,7 +1,4 @@
-{ host, localLib, ... }:
+{ localLib, ... }:
 {
-  imports = localLib.listPlatformImports {
-    dir = ./.;
-    platform = host.platform;
-  };
+  imports = localLib.listImports ./.;
 }

@@ -1,4 +1,8 @@
-{ localLib, ... }:
+{ host, localLib, ... }:
 {
-  imports = localLib.listImports ./.;
+  imports = localLib.listImportsForPlatforms {
+    platforms = [ "nixos" ];
+    platform = host.platform;
+    dir = ./.;
+  };
 }

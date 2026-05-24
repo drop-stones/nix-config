@@ -1,7 +1,7 @@
 { host, localLib, ... }:
 {
   imports = localLib.listImportsForPlatforms {
-    platforms = [ "nixos" ];
+    platforms = [ "wsl" ];
     platform = host.platform;
     dir = ./.;
   };

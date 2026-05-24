@@ -1,5 +1,8 @@
-# Font configuration for NixOS desktop
-{ localLib, ... }:
+{ host, localLib, ... }:
 {
-  imports = localLib.listImports ./.;
+  imports = localLib.listPlatformImports {
+    dir = ./.;
+    platform = host.platform;
+    platforms = [ "nixos" "darwin" ];
+  };
 }
