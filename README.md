@@ -16,14 +16,16 @@ NixOS and Home Manager configuration for multiple platforms.
 ```
 .
 ├── hosts/           # Host-specific configurations
-├── home/            # Home Manager modules
-│   └── modules/
-│       ├── shell/   # Shell and terminal tools (fish, zellij, bat, fzf, ...)
-│       ├── dev/     # Development tools (git, neovim, claude-code, ...)
-│       ├── apps/    # GUI applications (firefox, alacritty, 1password, ...)
-│       ├── desktop/ # Desktop environment (niri, fonts, theme, fcitx5, ...)
-│       └── lang/    # Language toolchains (nix, rust, python, nodejs, ...)
-├── system/          # NixOS/darwin system modules
+├── home/            # Per-platform Home Manager base settings (common, nixos, darwin, wsl)
+├── system/          # Per-platform NixOS/darwin base settings (common, nixos, darwin, wsl)
+├── modules/         # Reusable module library
+│   ├── home/
+│   │   ├── shell/   # Shell and terminal tools (fish, zellij, bat, fzf, ...)
+│   │   ├── dev/     # Development tools (git, neovim, claude-code, ...)
+│   │   ├── apps/    # GUI applications (firefox, alacritty, 1password, ...)
+│   │   ├── desktop/ # Desktop environment (niri, fonts, theme, fcitx5, ...)
+│   │   └── lang/    # Language toolchains (nix, rust, python, nodejs, ...)
+│   └── system/      # NixOS/darwin system modules (apps, desktop, dev)
 ├── lib/             # Custom Nix library functions
 ├── pkgs/            # Custom packages
 ├── overlays/        # Nixpkgs overlays

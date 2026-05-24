@@ -53,5 +53,5 @@ reboot
 
 ### 1Password
 
-See [modules/system/apps/common/1password/README.md](../../modules/system/apps/common/1password/README.md)
+See [modules/system/apps/1password/common/README.md](../../modules/system/apps/1password/common/README.md)
 for the manual GUI settings that must be enabled after first launch.

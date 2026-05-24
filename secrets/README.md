@@ -4,14 +4,16 @@ This directory configures [agenix](https://github.com/ryantm/agenix) for managin
 
 ## Overview
 
-Secrets are loaded as NixOS module when `data.user.useSecrets` is `true` (see `lib/nixosSystem.nix`). Currently, only the `nixos-wsl-work` host (using `work` user data) enables secrets.
+Secrets are loaded as NixOS module when `host.user.useSecrets` is `true` (see `lib/nixosSystem.nix`). Currently, only the `nixos-wsl-work` host (using `work` user data) enables secrets.
 
 ## Managed Secrets
 
 | Secret | Decrypted Path | Source |
 |--------|---------------|--------|
 | `gitconfig` | `~/.config/git/config` | `secrets-config/nixos-wsl/git/config.age` |
+| `git-personal-identity` | `~/.config/git/personal-identity` | `secrets-config/nixos-wsl/git/personal-identity.age` |
 | `fish-config` | `~/.config/fish/conf.d/zzz-local.fish` | `secrets-config/nixos-wsl/fish/conf.d/local.fish.age` |
+| `copilot-instructions` | `~/.config/copilot/copilot-instructions.md` | `secrets-config/nixos-wsl/copilot/copilot-instructions.md.age` |
 
 ## How It Works
 
