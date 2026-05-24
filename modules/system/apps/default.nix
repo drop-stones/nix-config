@@ -1,7 +1,4 @@
-{ host, localLib, ... }:
+{ localLib, ... }:
 {
-  imports = localLib.listImports {
-    dir = ./.;
-    inherit host;
-  };
+  imports = localLib.listImports { dir = ./.; };
 }
