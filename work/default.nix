@@ -60,5 +60,13 @@
       group = "users";
       mode = "0400";
     };
+    "claude-instructions" = {
+      symlink = true;
+      path = "${host.user.homeDirectory}/.config/claude/CLAUDE.md";
+      file = "${work-config}/nixos-wsl/claude/CLAUDE.md.age";
+      owner = "${host.user.username}";
+      group = "users";
+      mode = "0400";
+    };
   };
 }

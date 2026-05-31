@@ -16,6 +16,7 @@ Currently only the `nixos-wsl-work` host uses this profile (see `lib/nixosSystem
 | `fish-config` | `~/.config/fish/conf.d/zzz-local.fish` | `work-config/nixos-wsl/fish/conf.d/local.fish.age` |
 | `copilot-instructions` | `~/.config/copilot/copilot-instructions.md` | `work-config/nixos-wsl/copilot/copilot-instructions.md.age` |
 | `claude-settings` | `~/.config/claude/settings.json` | `work-config/nixos-wsl/claude/settings.json.age` |
+| `claude-instructions` | `~/.config/claude/CLAUDE.md` | `work-config/nixos-wsl/claude/CLAUDE.md.age` |
 
 ## How It Works
 
