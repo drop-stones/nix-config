@@ -12,6 +12,7 @@
     ## windows
     wslwrap register cmd --mode windows
     wslwrap register explorer --mode windows
+    wslwrap register op --mode windows
     wslwrap register powershell --mode windows
     wslwrap register pwsh --mode windows
     wslwrap register wsl --mode windows
