@@ -1,6 +1,9 @@
 # Work Profile
 
-This directory provides the NixOS module loaded for hosts with `host.user.profile == "work"`. It hosts [agenix](https://github.com/ryantm/agenix)-based encrypted secrets pulled from the private [`work-config`](https://github.com/drop-stones/work-config) repo.
+This directory provides the NixOS module loaded for hosts with `host.user.profile == "work"`. It combines:
+
+- [agenix](https://github.com/ryantm/agenix)-based encrypted secrets (from the private [`work-config`](https://github.com/drop-stones/work-config) repo)
+- Work-only system packages (e.g., `google-cloud-sdk`) imported from `work-config/modules`
 
 Currently only the `nixos-wsl-work` host uses this profile (see `lib/nixosSystem.nix`).
 

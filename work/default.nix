@@ -8,6 +8,7 @@
 {
   imports = [
     agenix.nixosModules.default
+    (work-config + "/modules")
     { environment.systemPackages = [ agenix.packages.${pkgs.stdenv.hostPlatform.system}.default ]; }
   ];
 
