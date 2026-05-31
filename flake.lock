@@ -226,11 +226,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773876229,
-        "narHash": "sha256-ncup+eYqHABZzBgwfQzxOXWHIcjN4kkZl9QTb4cgNm8=",
+        "lastModified": 1780168514,
+        "narHash": "sha256-1lb9fagHnhY7XhiDe59s2T4nRsStckqQNalmEjKQfLc=",
         "owner": "nix-community",
         "repo": "NixOS-WSL",
-        "rev": "381bc12a25d49c6b798f98ab33a8d951ec54659b",
+        "rev": "cee2c71e2e1e43b65d122460fd0c935fc7b27e30",
         "type": "github"
       },
       "original": {
@@ -275,11 +275,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1779793732,
-        "narHash": "sha256-U7EZxMQf3cCKYIgkEmR2clAupEA3m73A9scWNbPtstA=",
+        "lastModified": 1780212144,
+        "narHash": "sha256-GGBuzhfpFKkIPzSulZqw+Hqr0UUiFn0wOvraGug8AeU=",
         "owner": "drop-stones",
         "repo": "nvim-config",
-        "rev": "77d82bcb1823330a8633344db1b105dacb37773e",
+        "rev": "10a6f68b264d52398deb5b7d5a72a2b332c006ef",
         "type": "github"
       },
       "original": {
@@ -325,25 +325,9 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nvim-config": "nvim-config",
-        "secrets-config": "secrets-config",
         "wallpapers": "wallpapers",
+        "work-config": "work-config",
         "wslwrap-fish": "wslwrap-fish"
-      }
-    },
-    "secrets-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1774160445,
-        "narHash": "sha256-pz6Lim0uKbDq7EjOHpPjoQD6Ou6xkEUOM3Yp6TzjVa4=",
-        "ref": "refs/heads/main",
-        "rev": "eb8713f33ff5241f05435c5523bb9fe9ad442f38",
-        "revCount": 20,
-        "type": "git",
-        "url": "ssh://git@github.com/drop-stones/secrets-config"
-      },
-      "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/drop-stones/secrets-config"
       }
     },
     "systems": {
@@ -375,6 +359,22 @@
       "original": {
         "type": "git",
         "url": "ssh://git@github.com/drop-stones/wallpapers"
+      }
+    },
+    "work-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1780230793,
+        "narHash": "sha256-ctvf6ykdrsFyh7cwNdyZFedeGBjDo2IAzBmomNgLMqc=",
+        "ref": "refs/heads/main",
+        "rev": "3f5bc849487d678ca380bffdad2cc17d12468c36",
+        "revCount": 27,
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/work-config"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/drop-stones/work-config"
       }
     },
     "wslwrap-fish": {
