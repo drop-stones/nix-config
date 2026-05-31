@@ -28,8 +28,8 @@ The repository is organized into three conceptual layers:
 - `lib/` - Custom Nix library functions
 - `pkgs/` - Custom packages
 - `overlays/` - Nixpkgs overlays
-- `data/` - Per-user/platform data (username, homeDirectory, useSecrets flag, git config)
-- `secrets/` - Secret management (agenix, auto-loaded when `data.user.useSecrets` is true)
+- `data/` - Per-user/platform data (username, homeDirectory, profile, git config)
+- `work/` - Work-profile NixOS module (agenix secrets + work-only packages, auto-loaded when `host.user.profile == "work"`)
 
 ## Module Classification
 
@@ -46,7 +46,7 @@ Modules are categorized by **purpose**, not by implementation:
 - Modules under `modules/home/apps/` and `modules/home/desktop/` use `localLib.listPlatformImports` with `common/` and `<platform>/` subdirectories
 - Modules under `modules/home/shell/`, `modules/home/dev/`, and `modules/home/lang/` use `localLib.listImports` (platform-agnostic at the top level)
 - Individual modules (e.g., `fish/`, `ssh/`) may use `listPlatformImports` internally for platform-specific variants
-- Use `data.user.useSecrets` to conditionally skip modules (e.g., claude-code) or config files (e.g., copilot-instructions.md)
+- Use `host.user.profile` (`"personal"` | `"work"`) to conditionally skip modules or config files (e.g., copilot-instructions.md, claude-code settings.json)
 
 ## Nix Conventions
 

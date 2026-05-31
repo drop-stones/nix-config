@@ -8,7 +8,7 @@ localLib.mkNixosHost {
     user = base.user // {
       username = "work";
       homeDirectory = "/home/work";
-      useSecrets = true;
+      profile = "work";
     };
     git = { enable = false; };
   };

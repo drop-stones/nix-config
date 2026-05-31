@@ -8,7 +8,7 @@ NixOS and Home Manager configuration for multiple platforms.
 |------|----------|-------------|-------------|
 | [`nixos`](hosts/nixos/) | NixOS | x86_64-linux | Standalone NixOS desktop |
 | [`nixos-wsl`](hosts/wsl/) | NixOS on WSL2 | x86_64-linux | WSL2 personal environment |
-| [`nixos-wsl-work`](hosts/wsl-work/) | NixOS on WSL2 | x86_64-linux | WSL2 work environment (with [secrets](secrets/)) |
+| [`nixos-wsl-work`](hosts/wsl-work/) | NixOS on WSL2 | x86_64-linux | WSL2 work environment (with [work profile](work/)) |
 | [`darwin`](hosts/darwin/) | macOS (nix-darwin) | x86_64-darwin | Intel Mac |
 
 ## Repository Structure
@@ -29,8 +29,8 @@ NixOS and Home Manager configuration for multiple platforms.
 ├── lib/             # Custom Nix library functions
 ├── pkgs/            # Custom packages
 ├── overlays/        # Nixpkgs overlays
-├── data/            # Per-user/platform data (username, homeDirectory, ...)
-└── secrets/         # Secret management (agenix)
+├── data/            # Per-user/platform data (username, homeDirectory, profile, ...)
+└── work/            # Work-profile module (agenix secrets + work-only packages)
 ```
 
 ## Installation
@@ -41,6 +41,6 @@ See the README in each host directory:
 - [macOS (darwin) installation](hosts/darwin/README.md)
 - [WSL2 installation](hosts/wsl/README.md)
 
-## Secrets
+## Work Profile
 
-See [secrets/README.md](secrets/README.md) for the agenix-based secrets system.
+See [work/README.md](work/README.md) for the work-only configuration (agenix-encrypted secrets + work-specific Nix modules).

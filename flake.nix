@@ -53,9 +53,9 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
-    # private secrets
-    secrets-config = {
-      url = "git+ssh://git@github.com/drop-stones/secrets-config";
+    # work-only private config (encrypted secrets + work-profile Nix modules)
+    work-config = {
+      url = "git+ssh://git@github.com/drop-stones/work-config";
       flake = false;
     };
 

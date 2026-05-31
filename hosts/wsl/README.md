@@ -38,7 +38,7 @@ for the required Windows-side settings.
 
 ## nixos-wsl-work Variant
 
-The [`nixos-wsl-work`](../wsl-work/) host uses the same platform (`wsl`) but with different user data (`work` instead of `drop-stones`). It also enables [secrets](../../secrets/) via `useSecrets = true`.
+The [`nixos-wsl-work`](../wsl-work/) host uses the same platform (`wsl`) but with different user data (`work` instead of `drop-stones`). It also enables the [work profile](../../work/) via `profile = "work"`.
 
 ```bash
 sudo nixos-rebuild switch --flake "github:drop-stones/nix-config#nixos-wsl-work"
