@@ -13,7 +13,7 @@
   ];
 
   # decryption key
-  age.identityPaths = [ "${host.user.homeDirectory}/.config/age/keys.txt" ];
+  age.identityPaths = [ "/etc/age/keys.txt" ];
 
   age.secrets = {
     # git
