@@ -15,6 +15,7 @@ Currently only the `nixos-wsl-work` host uses this profile (see `lib/nixosSystem
 | `git-personal-identity` | `~/.config/git/personal-identity` | `work-config/nixos-wsl/git/personal-identity.age` |
 | `fish-config` | `~/.config/fish/conf.d/zzz-local.fish` | `work-config/nixos-wsl/fish/conf.d/local.fish.age` |
 | `copilot-instructions` | `~/.config/copilot/copilot-instructions.md` | `work-config/nixos-wsl/copilot/copilot-instructions.md.age` |
+| `claude-settings` | `~/.config/claude/settings.json` | `work-config/nixos-wsl/claude/settings.json.age` |
 
 ## How It Works
 

@@ -51,5 +51,14 @@
       group = "users";
       mode = "0400";
     };
+    # claude-code
+    "claude-settings" = {
+      symlink = true;
+      path = "${host.user.homeDirectory}/.config/claude/settings.json";
+      file = "${work-config}/nixos-wsl/claude/settings.json.age";
+      owner = "${host.user.username}";
+      group = "users";
+      mode = "0400";
+    };
   };
 }
