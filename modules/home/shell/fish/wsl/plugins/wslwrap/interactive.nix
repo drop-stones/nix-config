@@ -1,21 +1,9 @@
 { lib, host, ... }:
 {
+  # `wslwrap link` may invoke `sudo ln -s` on the first run, so it must
+  # stay in interactive shells where a password prompt can be answered.
   programs.fish.interactiveShellInit = ''
     # wslwrap.fish
-    ## auto
-    wslwrap register bat
-    wslwrap register eza
-    wslwrap register fd --path-separator=/
-    wslwrap register lazygit
-    wslwrap register nvim
-    wslwrap register rg
-    ## windows
-    wslwrap register cmd --mode windows
-    wslwrap register explorer --mode windows
-    wslwrap register op --mode windows
-    wslwrap register powershell --mode windows
-    wslwrap register pwsh --mode windows
-    wslwrap register wsl --mode windows
     ## symlink
     wslwrap link ssh.exe
     wslwrap link ssh-add.exe
