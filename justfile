@@ -1,5 +1,15 @@
 set shell := ["fish", "-c"]
 
+host_default := if os() == "macos" {
+    "darwin"
+} else if env("WSL_DISTRO_NAME", "") != "" {
+    if env("USER") == "work" { "nixos-wsl-work" } else { "nixos-wsl" }
+} else {
+    "nixos"
+}
+
+rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo nixos-rebuild" }
+
 # Interactive recipe picker (default).
 _default:
     @just --choose
@@ -9,3 +19,24 @@ setup-age-key profile="work":
     op read "op://Private/age-{{profile}}/password" \
       | sudo install -D -m 0400 -o root -g root /dev/stdin /etc/age/keys.txt
     @echo "Placed /etc/age/keys.txt for profile '{{profile}}'"
+
+# Rebuild and switch system configuration.
+switch host=host_default:
+    {{rebuild_cmd}} switch --flake .#{{host}}
+
+# Update flake inputs. Pass an input name to update only that one.
+update input="":
+    nix flake update {{input}}
+
+# Collect garbage. Default keeps the last 14 days of generations.
+gc days="14":
+    sudo nix-collect-garbage --delete-older-than {{days}}d
+    nix-collect-garbage --delete-older-than {{days}}d
+
+# Format all Nix files with nixfmt.
+fmt:
+    fd -e nix -x nixfmt
+
+# Run nix flake check.
+check:
+    nix flake check
