@@ -12,6 +12,7 @@ _: {
     wslwrap register nvim
     wslwrap register rg
     ## windows
+    wslwrap register btm --mode windows
     wslwrap register cmd --mode windows
     wslwrap register explorer --mode windows
     wslwrap register op --mode windows
