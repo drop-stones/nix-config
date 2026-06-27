@@ -1,4 +1,1 @@
-{ localLib, ... }:
-{
-  imports = localLib.listImports { dir = ./.; };
-}
+{ localLib, host, ... }: localLib.importsModule ./. host
