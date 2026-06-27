@@ -1,4 +1,4 @@
-platform: {
-  git = import ./git platform;
+{ lib }: platform: {
+  git = import ./git { inherit lib; } platform;
   user = import ./users platform;
 }

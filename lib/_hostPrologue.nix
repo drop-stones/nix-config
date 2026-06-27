@@ -21,8 +21,10 @@ let
   listImports = import ./listImports.nix libInputs;
   mkPkgs = import ./mkPkgs.nix libInputs;
 
-  baseData = import (fromRoot "data") platform;
-  host = (hostOverrides baseData) // { inherit platform; };
+  baseData = import (fromRoot "data") { inherit (libInputs) lib; } platform;
+  host = (hostOverrides baseData) // {
+    inherit platform;
+  };
 in
 {
   inherit host system;
