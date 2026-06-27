@@ -43,16 +43,18 @@ Modules are categorized by **purpose**, not by implementation:
 
 ## Platform System
 
-- Modules under `modules/home/apps/` and `modules/home/desktop/` use `localLib.listPlatformImports` with `common/` and `<platform>/` subdirectories
-- Modules under `modules/home/shell/`, `modules/home/dev/`, and `modules/home/lang/` use `localLib.listImports` (platform-agnostic at the top level)
-- Individual modules (e.g., `fish/`, `ssh/`) may use `listPlatformImports` internally for platform-specific variants
+- Automatic imports are done with `localLib.listImports { dir; host?; platforms?; }`, which collects `*.nix` files and subdirectories containing a `default.nix`
+- Category-level `default.nix` files (e.g. `modules/home/apps/`, `modules/home/shell/`) just call `listImports { dir = ./.; }` with no platform handling
+- Platform handling lives in individual modules (e.g. `alacritty/`, `fonts/`, `ssh/`, `fish/`): they pass `inherit host` so that subdirectories named after a known platform (`nixos`, `darwin`, `wsl`) are imported only when they match `host.platform`; shared config goes in a `common/` subdirectory
+- Pass `platforms = [ ... ]` to skip a module entirely unless `host.platform` is in the list (e.g. `fonts/` uses `[ "nixos" "darwin" ]`)
 - Use `host.user.profile` (`"personal"` | `"work"`) to conditionally skip modules or config files (e.g., copilot-instructions.md, claude-code settings.json)
 
 ## Nix Conventions
 
 ### Module Structure
 
-- Use `default.nix` with `localLib.listImports` for automatic imports
+- For a `default.nix` that only auto-imports its directory, use `localLib.importsModule ./. host` (a thin wrapper over `localLib.listImports` that always forwards `host`)
+- Use `localLib.listImports` directly only when you need extra options such as `platforms`
 - Separate concerns into individual `.nix` files (e.g., `environment.nix`, `keybindings.nix`)
 - For config files, create a `config/` or `settings/` subdirectory
 
