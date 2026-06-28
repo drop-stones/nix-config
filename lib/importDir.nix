@@ -9,8 +9,8 @@ args:
   mkValue ? import,
 }:
 let
-  pathToStem = import ./pathToStem.nix args;
-  listImports = import ./listImports.nix args;
+  pathToStem = import ./internal/pathToStem.nix args;
+  listImports = import ./internal/listImports.nix args;
 
   paths = listImports { inherit dir; };
 in

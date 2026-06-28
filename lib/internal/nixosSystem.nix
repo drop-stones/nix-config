@@ -1,42 +1,37 @@
-# darwinSystem :: {
+# nixosSystem :: {
 #   host: { user: { username: string, profile: string, ... }, platform: string, ... },
 #   system: string,
-#   darwin-modules: [ module ],
+#   nixos-modules: [ module ],
 #   home-modules: [ module ],
 #   specialArgs: attrs,
-# } -> darwinSystem
+# } -> nixosSystem
 #
-# Build a darwin system configuration and integrate Home Manager:
-# - appends home-manager.darwinModules.home-manager to the darwin module list
+# Build a NixOS system configuration and integrate Home Manager:
+# - appends home-manager.nixosModules.home-manager to the NixOS module list
 # - conditionally loads work/ when host.user.profile == "work"
-# - reuses the same pkgs set between darwin and Home Manager
+# - reuses the same pkgs set between NixOS and Home Manager
 # - forwards specialArgs to Home Manager via extraSpecialArgs
 # - imports the given Home Manager modules for the specified user
-{
-  lib,
-  home-manager,
-  nix-darwin,
-  ...
-}@args:
+{ lib, home-manager, ... }@args:
 let
-  fromRoot = import ./fromRoot.nix args;
+  fromRoot = import ../fromRoot.nix args;
 in
 {
   host,
   system,
-  darwin-modules,
+  nixos-modules,
   home-modules,
   specialArgs,
   ...
 }:
-nix-darwin.lib.darwinSystem {
+lib.nixosSystem {
   inherit system specialArgs;
 
   modules =
-    darwin-modules
+    nixos-modules
     ++ lib.optionals (host.user.profile == "work") [ (fromRoot "work") ]
     ++ [
-      home-manager.darwinModules.home-manager
+      home-manager.nixosModules.home-manager
       {
         home-manager = {
           useGlobalPkgs = true;

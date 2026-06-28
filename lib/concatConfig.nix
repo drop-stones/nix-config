@@ -2,7 +2,7 @@
 # Create a store file containing the concatenated config.
 { lib, ... }@args:
 let
-  listFilesByExtension = import ./listFilesByExtension.nix args;
+  listFilesByExtension = import ./internal/listFilesByExtension.nix args;
 in
 {
   pkgs,

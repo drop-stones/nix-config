@@ -9,7 +9,7 @@
 #   { localLib, host, ... }: localLib.importsModule ./. { inherit host; }
 args:
 let
-  listImports = import ./listImports.nix args;
+  listImports = import ./internal/listImports.nix args;
 in
 dir:
 {

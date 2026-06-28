@@ -1,9 +1,9 @@
-# _hostPrologue :: { inputs, hostDir, platform, system, hostOverrides? } -> ctx
+# hostPrologue :: { inputs, hostDir, platform, system, hostOverrides? } -> ctx
 #
 # Internal helper shared by mkNixosHost and mkDarwinHost. Builds the
 # host attribute, specialArgs, and the module path lists shared by all
-# system builders. Not intended for direct use; the leading underscore
-# is a privacy convention.
+# system builders. Lives under lib/internal/, so it is not exported on
+# localLib and is reached only by sibling lib functions.
 #
 # `inputs` is the host file's args (flake inputs + localLib); it gets
 # forwarded into specialArgs so modules can receive `localLib` and the
@@ -17,7 +17,7 @@ libInputs:
   hostOverrides ? (d: d),
 }:
 let
-  fromRoot = import ./fromRoot.nix libInputs;
+  fromRoot = import ../fromRoot.nix libInputs;
   listImports = import ./listImports.nix libInputs;
   mkPkgs = import ./mkPkgs.nix libInputs;
 

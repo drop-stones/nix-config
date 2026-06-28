@@ -4,8 +4,8 @@
 # since both run on NixOS via lib.nixosSystem).
 libInputs: args:
 let
-  prologue = import ./_hostPrologue.nix libInputs;
-  nixosSystem = import ./nixosSystem.nix libInputs;
+  prologue = import ./internal/hostPrologue.nix libInputs;
+  nixosSystem = import ./internal/nixosSystem.nix libInputs;
   ctx = prologue args;
 in
 nixosSystem {
