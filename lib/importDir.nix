@@ -1,4 +1,4 @@
-# importDir :: { dir, mkValue ? (p: import p) } -> attrs
+# importDir :: { dir, mkValue ? import } -> attrs
 #
 # Convert importable entries in `dir` to an attrset:
 # - ./foo.nix          -> { foo = mkValue ./foo.nix; }
