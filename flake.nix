@@ -141,7 +141,7 @@
       });
 
       devShells = forAllSystems (system: {
-        default = (localLib.mkPkgs inputs.nixpkgs system).mkShell {
+        default = inputs.nixpkgs.legacyPackages.${system}.mkShell {
           inherit (preCommit.${system}) shellHook;
           buildInputs = preCommit.${system}.enabledPackages;
         };
