@@ -1,4 +1,4 @@
-# importsModule :: dir -> { host, platforms ? null } -> module
+# importModules :: dir -> { host, platforms ? null } -> module
 #
 # Build the module body for a directory that just auto-imports its children,
 # always forwarding `host` so that platform-named subdirectories (nixos,
@@ -6,7 +6,7 @@
 # module unless host.platform is in the list. Replaces the boilerplate:
 #   { localLib, ... }: { imports = localLib.listImports { dir = ./.; }; }
 # with:
-#   { localLib, host, ... }: localLib.importsModule ./. { inherit host; }
+#   { localLib, host, ... }: localLib.importModules ./. { inherit host; }
 args:
 let
   listImports = import ./internal/listImports.nix args;

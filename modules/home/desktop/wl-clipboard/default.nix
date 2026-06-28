@@ -1,5 +1,5 @@
 { localLib, host, ... }:
-localLib.importsModule ./. {
+localLib.importModules ./. {
   inherit host;
   platforms = [ "wsl" ];
 }
