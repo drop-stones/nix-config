@@ -1,8 +1,5 @@
-{ host, localLib, ... }:
-{
-  imports = localLib.listImports {
-    dir = ./.;
-    inherit host;
-    platforms = [ "nixos" ];
-  };
+{ localLib, host, ... }:
+localLib.importsModule ./. {
+  inherit host;
+  platforms = [ "nixos" ];
 }
