@@ -10,6 +10,5 @@ in
   # The git CLI pager opts into a side-by-side view with real line numbers, while
   # lazygit (delta --paging=never) reads the clean [delta] above and stays unified.
   # HM sets iniContent.core.pager to the delta path, so override it there.
-  programs.git.iniContent.core.pager =
-    lib.mkForce "${delta} --side-by-side --line-numbers";
+  programs.git.iniContent.core.pager = lib.mkForce "${delta} --side-by-side --line-numbers";
 }

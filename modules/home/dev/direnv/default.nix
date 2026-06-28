@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   # direnv: per-directory environment variables, with Nix flake integration
   programs.direnv = {
     enable = true;

@@ -20,7 +20,11 @@ let
       if type == "directory" then
         go entryName entryPath
       else
-        { ${entryName} = { source = entryPath; }; }
+        {
+          ${entryName} = {
+            source = entryPath;
+          };
+        }
     ) (builtins.readDir absPath);
 in
 go name path

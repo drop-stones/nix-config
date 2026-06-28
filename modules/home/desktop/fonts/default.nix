@@ -3,6 +3,9 @@
   imports = localLib.listImports {
     dir = ./.;
     inherit host;
-    platforms = [ "nixos" "darwin" ];
+    platforms = [
+      "nixos"
+      "darwin"
+    ];
   };
 }

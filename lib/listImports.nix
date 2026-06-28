@@ -9,7 +9,11 @@
 # - when platforms is given, returns [] unless host.platform is in the list
 { lib, ... }:
 let
-  knownPlatforms = [ "nixos" "darwin" "wsl" ];
+  knownPlatforms = [
+    "nixos"
+    "darwin"
+    "wsl"
+  ];
 in
 {
   dir,
@@ -27,10 +31,8 @@ let
   isImportableDir = name: entries.${name} == "directory" && hasDefaultNix (childPath name);
   isImportable = name: isNixFile name || isImportableDir name;
 
-  matchesPlatformConvention = name:
-    host == null
-    || !(lib.elem name knownPlatforms)
-    || name == host.platform;
+  matchesPlatformConvention =
+    name: host == null || !(lib.elem name knownPlatforms) || name == host.platform;
 
   gated = platforms == null || (host != null && lib.elem host.platform platforms);
 
