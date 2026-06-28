@@ -53,6 +53,12 @@
       url = "github:gmodena/nix-flatpak/?ref=latest";
     };
 
+    # pre-commit hooks (nixfmt/statix/deadnix) installed via `nix develop`
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # work-only private config (encrypted secrets + work-profile Nix modules)
     work-config = {
       url = "git+ssh://git@github.com/drop-stones/work-config";
@@ -99,6 +105,26 @@
       args = inputs // {
         inherit localLib;
       };
+
+      systems = [
+        "x86_64-linux"
+        "x86_64-darwin"
+      ];
+      forAllSystems = inputs.nixpkgs.lib.genAttrs systems;
+
+      # Format + lint Nix on every commit. `nix develop` once per machine
+      # installs the git pre-commit hook; `nix flake check` runs the same checks.
+      preCommit = forAllSystems (
+        system:
+        inputs.git-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            nixfmt-rfc-style.enable = true;
+            statix.enable = true;
+            deadnix.enable = true;
+          };
+        }
+      );
     in
     {
       nixosConfigurations = {
@@ -109,5 +135,16 @@
       darwinConfigurations = {
         darwin = import ./hosts/darwin args;
       };
+
+      checks = forAllSystems (system: {
+        pre-commit = preCommit.${system};
+      });
+
+      devShells = forAllSystems (system: {
+        default = (localLib.mkPkgs inputs.nixpkgs system).mkShell {
+          inherit (preCommit.${system}) shellHook;
+          buildInputs = preCommit.${system}.enabledPackages;
+        };
+      });
     };
 }
