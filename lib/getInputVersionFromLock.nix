@@ -1,4 +1,4 @@
-# getInputVersionFromLock :: { name, removePrefix ? null } -> string
+# getInputVersionFromLock :: { name, prefix ? null } -> string
 #
 # Read flake.lock and derive a version-like string for the given input.
 #
