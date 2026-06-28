@@ -3,12 +3,12 @@
 # Build a darwin-flavored host via nix-darwin's darwinSystem.
 libInputs: args:
 let
-  prologue = import ./internal/hostPrologue.nix libInputs;
-  darwinSystem = import ./internal/darwinSystem.nix libInputs;
-  ctx = prologue args;
+  mkHostContext = import ./internal/mkHostContext.nix libInputs;
+  mkDarwinSystem = import ./internal/mkDarwinSystem.nix libInputs;
+  ctx = mkHostContext args;
 in
-darwinSystem {
+mkDarwinSystem {
   inherit (ctx) host system specialArgs;
-  darwin-modules = [ ctx.systemModule ] ++ ctx.hostExtras;
-  home-modules = [ ctx.homeModule ];
+  systemModules = [ ctx.systemModule ] ++ ctx.hostExtras;
+  homeModules = [ ctx.homeModule ];
 }

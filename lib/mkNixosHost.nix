@@ -4,12 +4,12 @@
 # since both run on NixOS via lib.nixosSystem).
 libInputs: args:
 let
-  prologue = import ./internal/hostPrologue.nix libInputs;
-  nixosSystem = import ./internal/nixosSystem.nix libInputs;
-  ctx = prologue args;
+  mkHostContext = import ./internal/mkHostContext.nix libInputs;
+  mkNixosSystem = import ./internal/mkNixosSystem.nix libInputs;
+  ctx = mkHostContext args;
 in
-nixosSystem {
+mkNixosSystem {
   inherit (ctx) host system specialArgs;
-  nixos-modules = [ ctx.systemModule ] ++ ctx.hostExtras;
-  home-modules = [ ctx.homeModule ];
+  systemModules = [ ctx.systemModule ] ++ ctx.hostExtras;
+  homeModules = [ ctx.homeModule ];
 }

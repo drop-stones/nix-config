@@ -1,8 +1,8 @@
-# darwinSystem :: {
+# mkDarwinSystem :: {
 #   host: { user: { username: string, profile: string, ... }, platform: string, ... },
 #   system: string,
-#   darwin-modules: [ module ],
-#   home-modules: [ module ],
+#   systemModules: [ module ],
+#   homeModules: [ module ],
 #   specialArgs: attrs,
 # } -> darwinSystem
 #
@@ -24,8 +24,8 @@ in
 {
   host,
   system,
-  darwin-modules,
-  home-modules,
+  systemModules,
+  homeModules,
   specialArgs,
   ...
 }:
@@ -33,7 +33,7 @@ nix-darwin.lib.darwinSystem {
   inherit system specialArgs;
 
   modules =
-    darwin-modules
+    systemModules
     ++ lib.optionals (host.user.profile == "work") [ (fromRoot "work") ]
     ++ [
       home-manager.darwinModules.home-manager
@@ -42,7 +42,7 @@ nix-darwin.lib.darwinSystem {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.${host.user.username}.imports = home-modules;
+          users.${host.user.username}.imports = homeModules;
         };
       }
     ];

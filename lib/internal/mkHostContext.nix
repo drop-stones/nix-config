@@ -1,4 +1,4 @@
-# hostPrologue :: { inputs, hostDir, platform, system, hostOverrides? } -> ctx
+# mkHostContext :: { inputs, hostDir, platform, system, hostOverrides? } -> ctx
 #
 # Internal helper shared by mkNixosHost and mkDarwinHost. Builds the
 # host attribute, specialArgs, and the module path lists shared by all

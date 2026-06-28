@@ -1,8 +1,8 @@
-# nixosSystem :: {
+# mkNixosSystem :: {
 #   host: { user: { username: string, profile: string, ... }, platform: string, ... },
 #   system: string,
-#   nixos-modules: [ module ],
-#   home-modules: [ module ],
+#   systemModules: [ module ],
+#   homeModules: [ module ],
 #   specialArgs: attrs,
 # } -> nixosSystem
 #
@@ -19,8 +19,8 @@ in
 {
   host,
   system,
-  nixos-modules,
-  home-modules,
+  systemModules,
+  homeModules,
   specialArgs,
   ...
 }:
@@ -28,7 +28,7 @@ lib.nixosSystem {
   inherit system specialArgs;
 
   modules =
-    nixos-modules
+    systemModules
     ++ lib.optionals (host.user.profile == "work") [ (fromRoot "work") ]
     ++ [
       home-manager.nixosModules.home-manager
@@ -37,7 +37,7 @@ lib.nixosSystem {
           useGlobalPkgs = true;
           useUserPackages = true;
           extraSpecialArgs = specialArgs;
-          users.${host.user.username}.imports = home-modules;
+          users.${host.user.username}.imports = homeModules;
         };
       }
     ];
