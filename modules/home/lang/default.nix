@@ -1,1 +1,1 @@
-{ localLib, host, ... }: localLib.importsModule ./. host
+{ localLib, host, ... }: localLib.importsModule ./. { inherit host; }
