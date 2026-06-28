@@ -1,7 +1,12 @@
-{ localLib, dms, ... }:
+{
+  localLib,
+  host,
+  dms,
+  ...
+}:
 {
   imports = [
     dms.nixosModules.greeter
-  ]
-  ++ localLib.listImports { dir = ./.; };
+    (localLib.importsModule ./. { inherit host; })
+  ];
 }
