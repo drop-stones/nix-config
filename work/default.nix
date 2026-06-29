@@ -3,6 +3,7 @@
   agenix,
   work-config,
   host,
+  config,
   ...
 }:
 {
@@ -68,5 +69,15 @@
       group = "users";
       mode = "0400";
     };
+    # nix-daemon proxy (decrypted to /run/agenix, root-owned; not symlinked to home)
+    "nix-daemon-proxy" = {
+      file = "${work-config}/nixos-wsl/nix-daemon/proxy.env.age";
+      mode = "0400";
+    };
   };
+
+  # nix-daemon needs the corporate proxy for substitution/builds.
+  # EnvironmentFile keeps the proxy host name out of /nix/store.
+  systemd.services.nix-daemon.serviceConfig.EnvironmentFile =
+    config.age.secrets."nix-daemon-proxy".path;
 }
