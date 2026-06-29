@@ -8,7 +8,11 @@ host_default := if os() == "macos" {
     "nixos"
 }
 
-rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo nixos-rebuild" }
+# nixos-rebuild runs as root, which bypasses the nix-daemon and downloads
+# directly using root's own environment. sudo resets the environment by
+# default, so forward the ambient proxy (e.g. the corporate WSL proxy) to
+# root. No-op when these vars are unset (personal machines).
+rebuild_cmd := if os() == "macos" { "darwin-rebuild" } else { "sudo --preserve-env=http_proxy,https_proxy nixos-rebuild" }
 
 # Interactive recipe picker (default).
 _default:
