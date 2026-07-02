@@ -17,23 +17,9 @@
   age.identityPaths = [ "/etc/age/keys.txt" ];
 
   age.secrets = {
-    # git
-    "gitconfig" = {
-      symlink = true;
-      path = "${host.user.homeDirectory}/.config/git/config";
-      file = "${work-config}/nixos-wsl/git/config.age";
-      owner = "${host.user.username}";
-      group = "users";
-      mode = "0400";
-    };
-    "git-personal-identity" = {
-      symlink = true;
-      path = "${host.user.homeDirectory}/.config/git/personal-identity";
-      file = "${work-config}/nixos-wsl/git/personal-identity.age";
-      owner = "${host.user.username}";
-      group = "users";
-      mode = "0400";
-    };
+    # git: identity secret is declared by work-config's modules/git.nix, which
+    # also wires it into programs.git via [include]. Base git config lives in
+    # nix-config's programs.git.
     # fish
     "fish-config" = {
       symlink = true;

@@ -13,8 +13,5 @@ localLib.mkNixosHost {
         homeDirectory = "/home/work";
         profile = "work";
       };
-      git = {
-        enable = false;
-      };
     };
 }
