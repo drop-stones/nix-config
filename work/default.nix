@@ -37,8 +37,8 @@
     # fish
     "fish-config" = {
       symlink = true;
-      path = "${host.user.homeDirectory}/.config/fish/conf.d/zzz-local.fish"; # load after plugin loading
-      file = "${work-config}/nixos-wsl/fish/conf.d/local.fish.age";
+      path = "${host.user.homeDirectory}/.config/fish/conf.d/work.fish"; # sorts after plugin-*.fish, so it loads last
+      file = "${work-config}/nixos-wsl/fish/conf.d/work.fish.age";
       owner = "${host.user.username}";
       group = "users";
       mode = "0400";
