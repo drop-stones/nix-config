@@ -29,28 +29,31 @@
       group = "users";
       mode = "0400";
     };
-    # copilot
+    # copilot / claude-code: canonical .age files live under work-config's
+    # chezmoi/ side (chezmoi can only see files under its .chezmoiroot), and
+    # are shared with the Windows deployment from there.
     "copilot-instructions" = {
       symlink = true;
       path = "${host.user.homeDirectory}/.config/copilot/copilot-instructions.md";
-      file = "${work-config}/nixos-wsl/copilot/copilot-instructions.md.age";
+      file = "${work-config}/chezmoi/dot_config/copilot/encrypted_copilot-instructions.md.age";
       owner = "${host.user.username}";
       group = "users";
       mode = "0400";
     };
-    # claude-code
     "claude-settings" = {
       symlink = true;
       path = "${host.user.homeDirectory}/.config/claude/settings.json";
-      file = "${work-config}/nixos-wsl/claude/settings.json.age";
+      file = "${work-config}/chezmoi/dot_config/claude/encrypted_settings.json.age";
       owner = "${host.user.username}";
       group = "users";
       mode = "0400";
     };
+    # imports the base rules from ~/.config/claude/base.md (deployed by the
+    # claude-code module) via CLAUDE.md's @path syntax
     "claude-instructions" = {
       symlink = true;
       path = "${host.user.homeDirectory}/.config/claude/CLAUDE.md";
-      file = "${work-config}/nixos-wsl/claude/CLAUDE.md.age";
+      file = "${work-config}/chezmoi/dot_config/claude/encrypted_CLAUDE.md.age";
       owner = "${host.user.username}";
       group = "users";
       mode = "0400";
