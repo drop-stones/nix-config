@@ -1,7 +1,7 @@
 _: {
-  programs.ssh.matchBlocks = {
+  programs.ssh.settings = {
     "*" = {
-      identityAgent = "~/.1password/agent.sock";
+      IdentityAgent = "~/.1password/agent.sock";
     };
   };
 }
