@@ -396,11 +396,11 @@
     "work-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1782722823,
-        "narHash": "sha256-8azGFK8hGbF7C/7TleyAVt0/MWdPSxWu6o0dwRe+KF4=",
+        "lastModified": 1785982272,
+        "narHash": "sha256-fqA78DzLmY39aScOTDoBCRiAaJQvP/N7P9KxPVNv3iI=",
         "ref": "refs/heads/main",
-        "rev": "a3783c87fe0d8d16471d13209893c99845291b6f",
-        "revCount": 37,
+        "rev": "ca06888105b7b2e9e469e31cf610f13b9cdeed6f",
+        "revCount": 52,
         "type": "git",
         "url": "ssh://git@github.com/drop-stones/work-config"
       },
