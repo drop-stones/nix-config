@@ -1,7 +1,4 @@
-{ pkgs-unstable, ... }:
-{
-  programs.dank-material-shell = {
-    enableSystemMonitoring = true;
-    dgop.package = pkgs-unstable.dgop;
-  };
+_: {
+  # dgop is resolved from pkgs by DMS's mkPackageOption default.
+  programs.dank-material-shell.enableSystemMonitoring = true;
 }
