@@ -295,11 +295,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785858998,
-        "narHash": "sha256-fKCq5jphd6l/Ms6gc3dptkw/TcKLYub9lQE5g6rbbkc=",
+        "lastModified": 1786313170,
+        "narHash": "sha256-9BG7OgUWdu0ONDO5X2q6+K4bsuBITkX/3W4nNJu1Ito=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "04607e1165ac22c5fde6dcc54c9e0b3c0487c555",
+        "rev": "fcb8fcd6bf2d0adecae5bd491afaaaf8311b758d",
         "type": "github"
       },
       "original": {
@@ -311,11 +311,11 @@
     },
     "nixpkgs-unstable": {
       "locked": {
-        "lastModified": 1785828668,
-        "narHash": "sha256-8fsyqeO+mJqvIzeO4xIpgJe/f7MTbbVTEC6RT6WSXNs=",
+        "lastModified": 1786247143,
+        "narHash": "sha256-8S3Kcxs7D4UtxJxSJZz0m14CGhuW0MxfrIwJxeGWGnQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e72e4f299401a3689d4b3d5fc6496b11db7064eb",
+        "rev": "279b4a8275f032c566576b3f181fa0f27197f588",
         "type": "github"
       },
       "original": {
@@ -328,11 +328,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1781790186,
-        "narHash": "sha256-WllumVuttAPKkZrT13Fmp89/PvVZlHbSckDf35AJX2Y=",
+        "lastModified": 1786251495,
+        "narHash": "sha256-xjlAqYbGIrdlJZqjBoHXuuUr5SWghQuE+kS6kpkGyw8=",
         "owner": "drop-stones",
         "repo": "nvim-config",
-        "rev": "08c3439f8bd62f0b9f13505b1a07d0955fda85dc",
+        "rev": "dce7833b41cc32b35f80507f7df1a640d3ea3a4d",
         "type": "github"
       },
       "original": {
@@ -396,11 +396,11 @@
     "work-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1785982272,
-        "narHash": "sha256-fqA78DzLmY39aScOTDoBCRiAaJQvP/N7P9KxPVNv3iI=",
+        "lastModified": 1785992649,
+        "narHash": "sha256-lL9asqo7e+eG3ttZmgl5x8EPOthAVbCgpvvqMslCnzM=",
         "ref": "refs/heads/main",
-        "rev": "ca06888105b7b2e9e469e31cf610f13b9cdeed6f",
-        "revCount": 52,
+        "rev": "dfd9511b0a4e3d790974668d01e88900fb3ca5b1",
+        "revCount": 57,
         "type": "git",
         "url": "ssh://git@github.com/drop-stones/work-config"
       },
